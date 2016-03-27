@@ -63,3 +63,25 @@ Holds typeahead suggestions for search.
 
 ##### Listeners:
 - `SearchSuggestions`
+
+### CommentStore
+
+Holds all persisted project data.
+
+##### Actions:
+- `receiveAllComments`
+
+
+##### Listeners:
+- `CommentsIndex` (passes to `CommentIndexItem` via props)
+
+
+### ProjectFormStore
+
+Holds un-persisted note data to send to the API.
+
+##### Actions:
+- `receiveCommentFormParams`
+
+##### Listeners:
+- `CommentForm`

@@ -127,3 +127,4 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 [phase-five]: ./docs/phases/phase5.md
 [phase-six]: ./docs/phases/phase6.md
 [phase-seven]: ./docs/phases/phase7.md
+[phase-eight]: ./docs/phases/phase8.md
