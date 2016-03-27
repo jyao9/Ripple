@@ -14,7 +14,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Create an account
 - [ ] Log in / Log out
 - [ ] Create, edit, fund and view projects
-- [ ] Comment on projects they have funded
+- [ ] Create rewards for projects
 - [ ] Search for projects by category or name
 - [ ] Click on project icon to see the details about that specific project
 
@@ -91,6 +91,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ##Phase 6: Navigation Bar (0.5 day)
 - [ ] add real time search to projects index page
+- [ ] search through projects for specific words
 - [ ] projects index page will render matching projects
 - [ ] update project index component based on nav bar
 - [ ] add handleChange function to project index component
@@ -112,12 +113,12 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
-- [ ] Search through projects for specific words
+- [ ] Users can comment on projects they have funded
 - [ ] Create account page for user showing projects they have backed
 - [ ] Add category index items to project index page
   - [ ] Category index items render projects with that category
 - [ ] See how much projects have been funded thus far via project icon
-- [ ]  
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
