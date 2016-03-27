@@ -89,7 +89,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] reward amount gets added to project status
 - [ ] update project index page of that reward
 
-##Phase 6: Navigation Bar (0.5 day)
+### Phase 6: Navigation Bar (0.5 day)
 - [ ] add real time search to projects index page
 - [ ] search through projects for specific words
 - [ ] projects index page will render matching projects
