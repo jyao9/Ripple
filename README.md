@@ -13,8 +13,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, edit, fund and view projects
+- [ ] Create, edit, and view projects
 - [ ] Create rewards for projects
+- [ ] Fund/select rewards from projects
 - [ ] Search for projects by category or name
 - [ ] Click on project icon to see the details about that specific project
 
