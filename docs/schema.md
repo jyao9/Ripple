@@ -16,9 +16,16 @@ status      | integer   | not null, default 0
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-project_id      | integer   | not null
+project_id      | integer   | not null, foreign key (references projects), indexed
 value           | integer   | not null
 description     | text      | not null
+
+##backings
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+reward_id       | integer   | not null, foreign key (references rewards), indexed
+user_id         | integer   | not null, foreign key (references users), indexed
 
 ## users
 column name     | data type | details
@@ -32,6 +39,6 @@ session_token   | string    | not null, indexed, unique
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-project_id      | integer   | not null
-user_id         | integer   | not null
+project_id      | integer   | not null, foreign key (references project), indexed
+user_id         | integer   | not null, foreign key (references user), indexed
 body            | text      | not null

@@ -38,7 +38,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Projects can be created, viewed and edited through the API
 
-- [ ] create new project
+- [X] create new project
 - [ ] create `Project` model
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for projects (`ProjectsController`)
