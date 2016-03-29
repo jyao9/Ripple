@@ -4,5 +4,4 @@ var ApiUtil = require('./util/api_util.js');
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  ApiUtil.createProject();
 });

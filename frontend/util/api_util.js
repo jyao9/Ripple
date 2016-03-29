@@ -32,6 +32,19 @@ var ApiUtil = {
         console.log(project.title);
       }
     });
+  },
+
+  editProject: function (project) {
+    $.ajax({
+      type: "PATCH",
+      url: "api/projects/" + project.id,
+      data: {project: project},
+      dataType: "json",
+      success: function (project) {
+        console.log(project.title);
+        console.log(project.blurb);
+      }
+    });
   }
 };
 
