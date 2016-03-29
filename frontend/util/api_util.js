@@ -1,5 +1,8 @@
+var ProjectActions = require("../actions/project_actions.js");
+
 var ApiUtil = {
   fetchAllProjects: function () {
+    // debugger
     $.ajax({
       type: "GET",
       url: "api/projects",
@@ -8,6 +11,7 @@ var ApiUtil = {
         projects.forEach(function (project) {
           console.log(project.title);
         });
+        ProjectActions.receiveAllProjects(projects);
       }
     });
   },

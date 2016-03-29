@@ -7,6 +7,8 @@ var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 var hashHistory = require('react-router').hashHistory;
 
+var ProjectIndex = require('./components/projects/index.jsx');
+
 var App = React.createClass({
   render: function () {
     return(
@@ -20,7 +22,7 @@ var App = React.createClass({
 
 var routes = (
   <Route path="/" component={App}>
-
+    <Route path="projects" component={ProjectIndex} />
   </Route>
 );
 
