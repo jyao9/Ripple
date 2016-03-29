@@ -4,10 +4,10 @@ var History = require('react-router').History;
 var NavBar = React.createClass({
   render: function () {
     return(
-      <header class="header">
-        <nav class="header-nav">
-          <h1 class="header-logo">Ripple</h1>
-          <ul class="header-list">
+      <header className="header group">
+        <nav className="header-nav group">
+          <h1 className="header-logo">Ripple</h1>
+          <ul className="header-list">
             <li>Start a project</li>
           </ul>
         </nav>
