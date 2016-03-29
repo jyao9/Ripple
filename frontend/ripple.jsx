@@ -8,12 +8,13 @@ var IndexRoute = require('react-router').IndexRoute;
 var hashHistory = require('react-router').hashHistory;
 
 var ProjectIndex = require('./components/projects/index.jsx');
+var NavBar = require('./components/nav_bar.jsx');
 
 var App = React.createClass({
   render: function () {
     return(
       <div>
-        <header><h1>Ripple</h1></header>
+        <NavBar />
         <ProjectIndex />
         {this.props.children}
       </div>
