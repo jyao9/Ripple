@@ -41,11 +41,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] create new project
 - [X] create `Project` model
 - [X] seed the database with a small amount of test data
-- [ ] CRUD API for projects (`ProjectsController`)
+- [X] CRUD API for projects (`ProjectsController`)
 - [X] jBuilder views for projects
 - [X] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console
+- [X] setup `APIUtil` to interact with the API
+- [X] test out API interaction in the console
 
 ### Phase 2: Flux Architecture and Router (2 days)
 
