@@ -21,6 +21,17 @@ var ApiUtil = {
         console.log(project.title);
       }
     });
+  },
+
+  createProject: function (project) {
+    $.ajax({
+      type: "POST",
+      url: "api/projects",
+      data: {project: project},
+      success: function (project) {
+        console.log(project.title);
+      }
+    });
   }
 };
 
