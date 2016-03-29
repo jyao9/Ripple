@@ -34,6 +34,7 @@ var ApiUtil = {
     });
   },
 
+  // Must have a key of id in the project object for this to work
   editProject: function (project) {
     $.ajax({
       type: "PATCH",

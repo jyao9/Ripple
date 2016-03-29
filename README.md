@@ -51,8 +51,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Projects can be created, read, edited and destroyed through user interface
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [X] setup the flux loop with skeleton files
+- [X] setup React Router
 - implement each project component, building out the flux loop as needed
   - [ ] `ProjectsIndex`
   - [ ] `ProjectIndexItem`
