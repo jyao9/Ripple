@@ -42,8 +42,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] create `Project` model
 - [X] seed the database with a small amount of test data
 - [ ] CRUD API for projects (`ProjectsController`)
-- [ ] jBuilder views for projects
-- [ ] setup Webpack & Flux scaffold
+- [X] jBuilder views for projects
+- [X] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console
 

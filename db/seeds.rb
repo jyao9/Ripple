@@ -17,15 +17,6 @@ Project.create!(
 )
 
 Project.create!(
-  title: "Mac and cheese",
-  category: "Food",
-  blurb: "I want to make the best mac and cheese in the world",
-  author_id: 2,
-  duration: 30,
-  goal: 100,
-)
-
-Project.create!(
   title: "Gold and white dress",
   category: "Fashion",
   blurb: "That dress is totally white and gold. I want to make it but with real gold.",
