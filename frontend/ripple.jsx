@@ -14,6 +14,7 @@ var App = React.createClass({
     return(
       <div>
         <header><h1>Ripple</h1></header>
+        <ProjectIndex />
         {this.props.children}
       </div>
     );
@@ -22,7 +23,7 @@ var App = React.createClass({
 
 var routes = (
   <Route path="/" component={App}>
-    <Route path="projects" component={ProjectIndex} />
+
   </Route>
 );
 

@@ -54,7 +54,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] setup the flux loop with skeleton files
 - [X] setup React Router
 - implement each project component, building out the flux loop as needed
-  - [ ] `ProjectsIndex`
+  - [X] `ProjectsIndex`
   - [ ] `ProjectIndexItem`
   - [ ] `ProjectForm`
 - [ ] save Projects to the DB when the form is submitted

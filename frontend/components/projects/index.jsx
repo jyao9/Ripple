@@ -1,6 +1,7 @@
 var React = require('react');
 var ApiUtil = require('../../util/api_util.js');
 var ProjectStore = require('../../stores/project.js');
+var ProjectIndexItem = require('./index_item.jsx');
 
 var ProjectIndex = React.createClass({
   getInitialState: function () {
@@ -23,7 +24,7 @@ var ProjectIndex = React.createClass({
   render: function () {
     var projects = this.state.projects.map(function (project) {
       return(
-        <li key={project.id}>{project.title}</li>
+        <ProjectIndexItem key={project.id} project={project} />
       );
     })
 
