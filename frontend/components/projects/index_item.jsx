@@ -4,7 +4,7 @@ var History = require('react-router').History;
 var ProjectIndexItem = React.createClass({
   render: function () {
     return(
-      <li>
+      <li className="project-index-item">
         {this.props.project.title}
       </li>
     );

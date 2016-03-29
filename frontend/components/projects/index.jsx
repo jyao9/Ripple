@@ -29,7 +29,7 @@ var ProjectIndex = React.createClass({
     })
 
     return(
-      <ul>
+      <ul className="group">
         {projects}
       </ul>
     );
