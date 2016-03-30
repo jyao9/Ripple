@@ -22,6 +22,7 @@ var ApiUtil = {
       dataType: "json",
       success: function (project) {
         console.log(project.title);
+        ProjectActions.receiveSingleProject(project);
       }
     });
   },
@@ -33,6 +34,7 @@ var ApiUtil = {
       data: {project: project},
       success: function (project) {
         console.log(project.title);
+        ProjectActions.receiveSingleProject(project);
       }
     });
   },

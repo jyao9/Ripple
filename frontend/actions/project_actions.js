@@ -3,10 +3,16 @@ var ProjectConstants = require("../constants/project_constants.js");
 
 var ProjectActions = {
   receiveAllProjects: function (projects) {
-    // debugger
     AppDispatcher.dispatch({
       actionType: ProjectConstants.PROJECTS_RECEIVED,
       projects: projects
+    });
+  },
+
+  receiveSingleProject: function (project) {
+    AppDispatcher.dispatch({
+      actionType: ProjectConstants.PROJECT_RECEIVED,
+      project: project
     });
   }
 };

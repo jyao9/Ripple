@@ -10,6 +10,7 @@ var hashHistory = require('react-router').hashHistory;
 var ProjectIndex = require('./components/projects/index.jsx');
 var NavBar = require('./components/nav_bar.jsx');
 var ProjectForm = require('./components/projects/form.jsx');
+var ProjectDetail = require('./components/projects/detail.jsx');
 
 var App = React.createClass({
   render: function () {
@@ -26,11 +27,13 @@ var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={ProjectIndex}/>
     <Route path="projects/new" component={ProjectForm} />
+    <Route path="projects/:projectId" component={ProjectDetail} />
   </Route>
 );
 
 document.addEventListener("DOMContentLoaded", function () {
   ReactDOM.render(
-    <Router history={hashHistory}>{routes}</Router>, document.getElementById('root')
+    <Router history={hashHistory}>{routes}</Router>,
+    document.getElementById('root')
   );
 });

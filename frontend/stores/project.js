@@ -14,6 +14,10 @@ ProjectStore.all = function () {
   return projects;
 };
 
+ProjectStore.find = function (id) {
+  return _projects[id];
+};
+
 var resetProjects = function (projects) {
   _projects = {};
   projects.forEach(function (project) {
@@ -21,12 +25,20 @@ var resetProjects = function (projects) {
   });
 };
 
+var editProjects = function (project) {
+  _projects[project.id] = project;
+};
+
 ProjectStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case ProjectConstants.PROJECTS_RECEIVED:
-    resetProjects(payload.projects);
-    ProjectStore.__emitChange();
-    break;
+      resetProjects(payload.projects);
+      ProjectStore.__emitChange();
+      break;
+    case ProjectConstants.PROJECT_RECEIVED:
+      editProjects(payload.project);
+      ProjectStore.__emitChange();
+      break;
   }
 };
 
