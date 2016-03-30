@@ -58,8 +58,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
   - [X] `ProjectIndexItem`
   - [X] `NavBar`
   - [X] `ProjectForm`
-  - [ ] `ProjectDetail`
-- [ ] save Projects to the DB when the form is submitted
+  - [X] `ProjectDetail`
+- [X] save Projects to the DB when the form is submitted
 
 ### Phase 3: Backend setup and User Authentication (0.5 days)
 
@@ -72,7 +72,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ### Phase 4: Start Styling (0.5 days)
 
-**Objective:** Existing pages (including singup/signin) will look good.
+**Objective:** Existing pages (including signup/signin) will look good.
 
 - [ ] create a basic style guide
 - [ ] position elements on the page
