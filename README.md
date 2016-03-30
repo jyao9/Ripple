@@ -56,7 +56,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - implement each project component, building out the flux loop as needed
   - [X] `ProjectsIndex`
   - [X] `ProjectIndexItem`
-  - [ ] `NavBar`
+  - [X] `NavBar`
   - [ ] `ProjectForm`
 - [ ] save Projects to the DB when the form is submitted
 
