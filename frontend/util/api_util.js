@@ -2,7 +2,6 @@ var ProjectActions = require("../actions/project_actions.js");
 
 var ApiUtil = {
   fetchAllProjects: function () {
-    // debugger
     $.ajax({
       type: "GET",
       url: "api/projects",

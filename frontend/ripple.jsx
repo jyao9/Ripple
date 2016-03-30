@@ -9,13 +9,13 @@ var hashHistory = require('react-router').hashHistory;
 
 var ProjectIndex = require('./components/projects/index.jsx');
 var NavBar = require('./components/nav_bar.jsx');
+var ProjectForm = require('./components/projects/form.jsx');
 
 var App = React.createClass({
   render: function () {
     return(
       <div>
         <NavBar />
-        <ProjectIndex />
         {this.props.children}
       </div>
     );
@@ -24,12 +24,13 @@ var App = React.createClass({
 
 var routes = (
   <Route path="/" component={App}>
-
+    <IndexRoute component={ProjectIndex}/>
+    <Route path="projects/new" component={ProjectForm} />
   </Route>
 );
 
 document.addEventListener("DOMContentLoaded", function () {
   ReactDOM.render(
-    <Router hashHistory={hashHistory}>{routes}</Router>, document.getElementById('root')
+    <Router history={hashHistory}>{routes}</Router>, document.getElementById('root')
   );
 });

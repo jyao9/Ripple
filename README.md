@@ -58,6 +58,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
   - [X] `ProjectIndexItem`
   - [X] `NavBar`
   - [ ] `ProjectForm`
+  - [ ] `ProjectDetail`
 - [ ] save Projects to the DB when the form is submitted
 
 ### Phase 3: Backend setup and User Authentication (0.5 days)
