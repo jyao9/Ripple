@@ -12,7 +12,7 @@ class Api::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.author_id = 1
+    @project.author_id = 4
     if @project.save
       render :show
     else

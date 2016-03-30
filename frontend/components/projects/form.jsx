@@ -18,9 +18,11 @@ var ProjectForm = React.createClass ({
     event.preventDefault();
     var newProject = this.state;
 
-    ApiUtil.createProject(newProject);
+    ApiUtil.createProject(newProject, function (id) {
+      this.context.router.push("projects/" + id);
+    }.bind(this));
+
     this.setState({ title: null, category: null, blurb: null, duration: null, goal: null});
-    this.context.router.push("/");
   },
 
   render: function () {

@@ -65,7 +65,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create `User` model
+- [X] create `User` model
 - [ ] authentication
 - [ ] user signup/signin pages
 - [ ] redirect to projects index page after signup/signin

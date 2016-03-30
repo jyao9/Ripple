@@ -137,7 +137,11 @@ li {
 }
 
 .new-project select {
-  margin: 0 10px;
+  margin: 0 15px;
+  width: 190px;
+  height: 30px;
+  font-size: 40px;
+  padding-bottom: 10px;
 }
 
 .new-project label {
@@ -164,6 +168,7 @@ li {
   height: 120px;
   vertical-align: top;
   margin-left: 5px;
+  font-size: 24px;
 }
 
 .new-project button {

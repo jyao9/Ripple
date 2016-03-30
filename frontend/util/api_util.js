@@ -27,7 +27,7 @@ var ApiUtil = {
     });
   },
 
-  createProject: function (project) {
+  createProject: function (project, callback) {
     $.ajax({
       type: "POST",
       url: "api/projects",
@@ -35,6 +35,7 @@ var ApiUtil = {
       success: function (project) {
         console.log(project.title);
         ProjectActions.receiveSingleProject(project);
+        callback && callback(project.id);
       }
     });
   },
