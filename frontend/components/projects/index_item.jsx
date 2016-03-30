@@ -13,7 +13,7 @@ var ProjectIndexItem = React.createClass({
     return(
       <li
         className="project-index-item" onClick={this.showDetail}>
-        {this.props.project.title}
+        <div className="icon-title">{this.props.project.title}</div>
       </li>
     );
   }

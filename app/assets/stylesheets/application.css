@@ -14,7 +14,7 @@
  *= require_self
  */
 
-header, nav, h1, ul, li, div, a {
+body, header, nav, h1, h3, ul, li, div, a {
   margin: 0;
   padding: 0;
   border: 0;
@@ -28,7 +28,8 @@ header, nav, h1, ul, li, div, a {
 }
 
 body {
-  background: #eee;
+  background: #ECF7F8;
+  font-family: Helvetica;
 }
 
 ul {
@@ -51,15 +52,17 @@ li {
   margin-bottom: 50px;
 }
 
-.header-nav {
-
+.header-list a {
+  display: block;
+  padding: 15px;
 }
 
 .header-logo {
   font-size: 36px;
   font-weight: bold;
   float: left;
-  margin-right: 60px;
+  margin-right: 40px;
+  margin-left: 25px;
   color: #08088A;
 }
 
@@ -67,20 +70,21 @@ li {
   float: left;
   display: block;
   font-size: 18px;
-  padding-top: 12px;
 }
 
 .project-list-item {
   float: left;
   display: block;
   font-size: 24px;
-  margin-top: 9px;
   color: #5581AD;
+  padding-top: 8px;
+  padding-bottom: 5px;
 }
 
 .project-list-item:hover {
-  background: #C6E1FC;
-  transition: opacity 1s;
+  transition: background 0.8s ease;
+  background: #E0EAF5;
+
   cursor: pointer;
 }
 
@@ -91,9 +95,137 @@ li {
   border: 1px solid #000;
   float: left;
   margin: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.project-index-item:hover {
+  background: #1488D9;
+  transition: background 0.8s ease;
+
+}
+
+.icon-title {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  width: 300px;
+  height: 350px;
+  line-height: 350px;
+  text-align: center;
 }
 
 .project-list {
   width: 1030px;
   margin: 0 auto;
+}
+
+
+.new-project {
+  width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #4C5D69;
+  border-radius: 5px;
+}
+
+.form-title h2 {
+  font-size: 48px;
+  font-weight: 200;
+  display: block;
+  text-align: center;
+}
+
+.new-project select {
+  margin: 0 10px;
+}
+
+.new-project label {
+  font-size: 32px;
+  font-weight: 300;
+  display: block;
+  text-align: center;
+  margin: 40px 0;
+
+}
+
+.new-project input {
+  width: 200px;
+  height: 30px;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-left: 5px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.new-project textarea {
+  width: 425px;
+  height: 120px;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+.new-project button {
+  position: relative;
+  margin-left: 400px;
+  margin-bottom: 20px;
+}
+
+.detail {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.detail-header {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.content-main {
+  float: left;
+  width: 690px;
+}
+
+.content-sidebar {
+  float: left;
+  width: 300px;
+}
+
+.project-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.project-author {
+  font-size: 14px;
+  text-align: center;
+  color: #aaa;
+}
+
+.project-img {
+  display: block;
+  width: 95%;
+  height: 400px;
+  background: #79BBEA;
+  margin-bottom: 50px;
+}
+
+.project-blurb {
+  font-size: 24px;
+}
+
+.sidebar-info {
+  padding: 20px 0;
+}
+
+.count {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.text {
+  font-size: 14px;
+  color: #aaa;
 }

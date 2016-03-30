@@ -25,15 +25,10 @@ var ProjectForm = React.createClass ({
 
   render: function () {
     return(
-      <form className="new-project" onSubmit={this.createProject}>
-        <label>Title:
-          <input
-            type="text"
-            valueLink={this.linkState("title")}
-          />
-        </label>
+      <form className="new-project group" onSubmit={this.createProject}>
+        <div className="form-title"><h2>What are you going to create?</h2></div>
 
-        <label>Category:
+        <label>I want to start a
           <select className="category" valueLink={this.linkState("category")}>
             <option value=""></option>
             <option value="art">Art</option>
@@ -51,7 +46,14 @@ var ProjectForm = React.createClass ({
             <option value="publishing">Publishing</option>
             <option value="technology">Technology</option>
             <option value="theater">Theater</option>
-          </select>
+          </select> project.
+        </label>
+
+        <label>Title:
+          <input
+            type="text"
+            valueLink={this.linkState("title")}
+            />
         </label>
 
         <label>Blurb:
