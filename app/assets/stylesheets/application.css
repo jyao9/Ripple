@@ -52,6 +52,11 @@ li {
   margin-bottom: 50px;
 }
 
+.header-nav {
+  width: 1000px;
+  margin: 0 auto;
+}
+
 .header-nav a {
   display: block;
   padding: 15px;
@@ -72,9 +77,24 @@ li {
   font-size: 18px;
 }
 
+.header-nav button {
+  float: right;
+  margin-top: 30px;
+}
+
+.header-nav div {
+  float: right;
+  margin-left: 20px;
+  font-size: 24px;
+  color: #ccc;
+}
+
 .user-info {
   float: right;
-  padding-right: 40px;
+}
+
+.header-nav .user {
+  margin-top: 25px;
 }
 
 .user-info > div {
@@ -201,7 +221,7 @@ li {
 }
 
 .detail {
-  width: 1000px;
+  width: 900px;
   margin: 0 auto;
 }
 
@@ -217,7 +237,7 @@ li {
 
 .content-sidebar {
   float: left;
-  width: 300px;
+  width: 200px;
 }
 
 .project-title {

@@ -27,7 +27,7 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route path="/" component={App}>
+  <Route path="/" component={App} onEnter={_fetchUser}>
     <IndexRoute component={ProjectIndex}/>
     <Route path="projects/new" component={ProjectForm} onEnter={_requireLoggedIn} />
     <Route path="users/new" component={UserForm} />
@@ -56,5 +56,11 @@ function _requireLoggedIn(nextState, replace, asyncCompletionCallback) {
     }
 
     asyncCompletionCallback();
+  }
+}
+
+function _fetchUser (nextState, replace, asyncCompletionCallback) {
+  if (!SessionStore.currentUserHasBeenFetched()) {
+    ApiUtil.fetchCurrentUser(asyncCompletionCallback);
   }
 }
