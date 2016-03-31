@@ -10,7 +10,6 @@ blurb       | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 duration    | integer   | not null
 goal        | integer   | not null
-status      | integer   | not null, default 0
 
 ##rewards
 column name     | data type | details

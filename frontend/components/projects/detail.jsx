@@ -51,7 +51,7 @@ var ProjectDetail = React.createClass({
           </div>
 
           <div className="sidebar-info">
-            <div className="count">${this.state.project.status}</div>
+            <div className="count">$0</div>
             <span className="text">pledged of ${this.state.project.goal} goal</span>
           </div>
 

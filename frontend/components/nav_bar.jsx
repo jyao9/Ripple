@@ -52,7 +52,7 @@ var NavBar = React.createClass({
     return(
       <header className="header group">
         <nav className="header-nav group">
-          <ul className="header-list">
+          <ul className="header-list group">
             <h1 className="header-logo"><Link to="/">Ripple</Link></h1>
             <li className="project-list-item"><Link to="projects/new">Start a project</Link></li>
           </ul>
