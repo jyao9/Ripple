@@ -12,6 +12,7 @@ var NavBar = require('./components/nav_bar.jsx');
 var ProjectForm = require('./components/projects/form.jsx');
 var ProjectDetail = require('./components/projects/detail.jsx');
 var UserForm = require('./components/users/form.jsx');
+var SessionForm = require('./components/session/form.jsx');
 var SessionStore = require('./stores/session.js');
 
 var App = React.createClass({
@@ -30,6 +31,7 @@ var routes = (
     <IndexRoute component={ProjectIndex}/>
     <Route path="projects/new" component={ProjectForm} onEnter={_requireLoggedIn} />
     <Route path="users/new" component={UserForm} />
+    <Route path="login" component={SessionForm} />
     <Route path="projects/:projectId" component={ProjectDetail} />
   </Route>
 );
