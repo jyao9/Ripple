@@ -1,5 +1,7 @@
 class Api::ProjectsController < ApplicationController
 
+  before_action :require_signed_in, only: [:create, :update]
+
   def index
     @projects = Project.all
     render :index

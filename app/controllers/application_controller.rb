@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  def sign_in(user)
+  def sign_in!(user)
     @current_user = user
     session[:session_token] = user.reset_session_token!
   end
@@ -23,8 +23,10 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
-  def require_signed_in!
-
+  def require_signed_in
+    unless logged_in?
+      render text: "You must log in", status: 401
+    end
   end
 
 end

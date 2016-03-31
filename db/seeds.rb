@@ -33,3 +33,8 @@ Project.create!(
   duration: 30,
   goal: 100000,
 )
+
+User.create!(
+  username: "user",
+  password: "password"
+)
