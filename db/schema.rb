@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330210617) do
+ActiveRecord::Schema.define(version: 20160331132927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "backings", force: :cascade do |t|
+    t.integer  "reward_id",  null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "backings", ["reward_id"], name: "index_backings_on_reward_id", using: :btree
+  add_index "backings", ["user_id"], name: "index_backings_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "title",                  null: false
@@ -30,6 +40,14 @@ ActiveRecord::Schema.define(version: 20160330210617) do
 
   add_index "projects", ["author_id"], name: "index_projects_on_author_id", using: :btree
 
+  create_table "rewards", force: :cascade do |t|
+    t.integer  "project_id",  null: false
+    t.integer  "value",       null: false
+    t.text     "description", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
     t.string   "password_digest", null: false
@@ -37,5 +55,8 @@ ActiveRecord::Schema.define(version: 20160330210617) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

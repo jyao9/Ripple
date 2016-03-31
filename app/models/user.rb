@@ -2,6 +2,32 @@ class User < ActiveRecord::Base
   validates :username, :session_token, :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
+  has_many(
+    :projects,
+    class_name: "Project",
+    foreign_key: :author_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :backings,
+    class_name: "Backing",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :backed_rewards,
+    through: :backings,
+    source: :reward
+  )
+
+  has_many(
+    :backed_projects,
+    through: :backed_rewards,
+    source: :project
+  )
+
   attr_reader :password
 
   after_initialize :ensure_session_token
