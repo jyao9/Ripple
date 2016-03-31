@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  validates :title, :category, :blurb, :author_id, :duration, :goal, :status, presence: true
+  validates :title, :category, :blurb, :author_id, :duration, :goal, presence: true
 
   belongs_to(
     :author,

@@ -1,5 +1,5 @@
 json.extract!(
   project,
-  :id, :title, :category, :blurb, :author_id, :duration, :goal, :status
+  :id, :title, :category, :blurb, :author_id, :duration, :goal
 )
 json.author_name project.author.username

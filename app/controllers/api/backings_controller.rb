@@ -1,10 +1,15 @@
 class Api::BackingsController < ApplicationController
 
+  def index
+    @backings = Backing.all
+    render :index
+  end
+
   def create
     @backing = Backing.new(backing_params)
 
     if @backing.save
-      render json: {}
+      render :index
     else
       render json: @backing.error.full_messages, status: 422
     end
