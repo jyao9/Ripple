@@ -74,9 +74,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [X] create a basic style guide
+- [X] position elements on the page
+- [X] add basic colors & styles
 
 ### Phase 5: Rewards (2 days)
 

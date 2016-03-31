@@ -38,3 +38,31 @@ User.create!(
   username: "user",
   password: "password"
 )
+
+User.create!(
+  username: "user2",
+  password: "password2"
+)
+
+User.create!(
+  username: "user3",
+  password: "password3"
+)
+
+Reward.create!(
+  project_id: 1,
+  value: 1,
+  description: "I just want to help out. No reward needed."
+)
+
+Reward.create!(
+  project_id: 1,
+  value: 10,
+  description: "Your name will be put on as a recognized donator"
+)
+
+Reward.create!(
+  project_id: 1,
+  value: 100,
+  description: "You can suggest a featur for the website"
+)

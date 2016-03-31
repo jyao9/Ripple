@@ -14,7 +14,7 @@ class Api::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.author_id = 4
+    @project.author_id = current_user.id
     if @project.save
       render :show
     else
@@ -36,7 +36,7 @@ class Api::ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(
-      :title, :category, :blurb, :author_id, :duration, :goal
+      :title, :category, :blurb, :duration, :goal
     )
   end
 

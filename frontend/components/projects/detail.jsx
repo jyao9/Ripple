@@ -37,7 +37,7 @@ var ProjectDetail = React.createClass({
       <section className="detail group">
         <div className="detail-header">
           <div className="project-title"><h1>{this.state.project.title}</h1></div>
-          <div className="project-author"><h3>by {this.state.project.author_id}</h3></div>
+          <div className="project-author"><h3>by {this.state.project.author_name}</h3></div>
         </div>
         <div className="content-main">
           <div className="project-img">Project image here</div>
