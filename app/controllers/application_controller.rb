@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_signed_in
-    unless logged_in?
+    unless signed_in?
       render text: "You must log in", status: 401
     end
   end

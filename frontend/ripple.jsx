@@ -11,6 +11,8 @@ var ProjectIndex = require('./components/projects/index.jsx');
 var NavBar = require('./components/nav_bar.jsx');
 var ProjectForm = require('./components/projects/form.jsx');
 var ProjectDetail = require('./components/projects/detail.jsx');
+var UserForm = require('./components/users/form.jsx');
+var SessionStore = require('./stores/session.js');
 
 var App = React.createClass({
   render: function () {
@@ -26,7 +28,8 @@ var App = React.createClass({
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={ProjectIndex}/>
-    <Route path="projects/new" component={ProjectForm} />
+    <Route path="projects/new" component={ProjectForm} onEnter={_requireLoggedIn} />
+    <Route path="users/new" component={UserForm} />
     <Route path="projects/:projectId" component={ProjectDetail} />
   </Route>
 );
@@ -37,3 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('root')
   );
 });
+
+function _requireLoggedIn(nextState, replace, asyncCompletionCallback) {
+  if (!SessionStore.currentUserHasBeenFetched()) {
+    ApiUtil.fetchCurrentUser(_redirectIfNotLoggedIn);
+  } else {
+    _redirectIfNotLoggedIn();
+  }
+
+  function _redirectIfNotLoggedIn() {
+    if (!SessionStore.isLoggedIn()) {
+      replace("/login");
+    }
+
+    asyncCompletionCallback();
+  }
+}
