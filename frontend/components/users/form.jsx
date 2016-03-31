@@ -27,6 +27,7 @@ var UserForm = React.createClass ({
   render: function () {
     return(
       <form className="new-user group" onSubmit={this.createUser}>
+        <div className="title">Sign up</div>
         <label>Username:
           <input
             type="text"

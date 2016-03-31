@@ -67,8 +67,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [X] create `User` model
 - [X] authentication
-- [ ] user signup/signin pages
-- [ ] redirect to projects index page after signup/signin
+- [X] user signup/signin pages
+- [X] redirect to projects index page after signup/signin
 
 ### Phase 4: Start Styling (0.5 days)
 

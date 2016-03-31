@@ -28,6 +28,7 @@ var SessionForm = React.createClass ({
   render: function () {
     return(
       <form className="new-user group" onSubmit={this.handleSubmit}>
+        <div className="title">Sign in</div>
         <label>Username:
           <input
             type="text"
