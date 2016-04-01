@@ -49,7 +49,6 @@ li {
 .header {
   background: #fff;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 50px;
 }
 
 .header-nav {
@@ -137,6 +136,7 @@ li {
   border: 1px solid #000;
   float: left;
   margin: 20px;
+  margin-top: 40px;
   background: #9AC9EA;
   border-radius: 5px;
   cursor: pointer;
@@ -167,6 +167,7 @@ li {
 .new-project {
   width: 900px;
   margin: 0 auto;
+  margin-top: 50px;
   background: #fff;
   border: 1px solid #4C5D69;
   border-radius: 5px;
@@ -228,6 +229,7 @@ li {
 .detail-header {
   display: block;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .content-main {
@@ -324,4 +326,43 @@ li {
   background: #3ECE7D;
   color: #fff;
   margin-top: 40px;
+}
+
+.reward-list {
+  margin: 0 auto;
+  padding: 75px 200px;
+  background: #fff;
+}
+
+.reward-list-title {
+  font-size: 36px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.reward-index-item {
+  display: block;
+  width: 700px;
+  padding: 25px;
+  border: 1px solid #C3E2D2;
+  border-radius: 5px;
+  background: #E7F3ED;
+  margin-bottom: 20px;
+}
+
+.reward-header {
+  padding: 50px 375px;
+  border-bottom: 1px solid #ccc;
+}
+
+.reward-header-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.reward-header-author {
+  font-size: 14px;
+  text-align: center;
+  color: #aaa;
 }

@@ -30,7 +30,7 @@ var ProjectDetail = React.createClass({
   },
 
   render: function () {
-    if(this.state.project === undefined) {
+    if (this.state.project === undefined) {
       return <div></div>;
     }
 
