@@ -9,7 +9,7 @@ class Api::RewardsController < ApplicationController
     @reward = Reward.new(reward_params)
 
     if @reward.save
-      render :index
+      render :show
     else
       render json: @reward.errors.full_messages, status: 422
     end

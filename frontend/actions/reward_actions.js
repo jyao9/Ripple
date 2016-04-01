@@ -7,6 +7,12 @@ var RewardActions = {
       actionType: RewardConstants.REWARDS_RECEIVED,
       rewards: rewards
     });
+  },
+  receiveSingleReward: function (reward) {
+    AppDispatcher.dispatch({
+      actionType: RewardConstants.REWARD_RECEIVED,
+      reward: reward
+    });
   }
 };
 

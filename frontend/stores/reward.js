@@ -22,10 +22,18 @@ var resetRewards = function (rewards) {
   });
 };
 
+var editRewards = function (reward) {
+  _rewards[reward.id] = reward;
+};
+
 RewardStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case RewardConstants.REWARDS_RECEIVED:
       resetRewards(payload.rewards);
+      RewardStore.__emitChange();
+      break;
+    case RewardConstants.REWARD_RECEIVED:
+      editRewards(payload.reward);
       RewardStore.__emitChange();
       break;
   }

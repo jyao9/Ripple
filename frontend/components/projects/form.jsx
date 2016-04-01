@@ -18,8 +18,12 @@ var ProjectForm = React.createClass ({
     event.preventDefault();
     var newProject = this.state;
 
-    ApiUtil.createProject(newProject, function (id) {
-      this.context.router.push("projects/" + id);
+    // ApiUtil.createProject(newProject, function (id) {
+    //   this.context.router.push("projects/" + id);
+    // }.bind(this));
+
+    ApiUtil.createProject(newProject, function (project_id) {
+      this.context.router.push({pathname: "projects/new/rewards", query: {}, state: {project_id: project_id}});
     }.bind(this));
 
     this.setState({ title: null, category: null, blurb: null, duration: null, goal: null});
@@ -78,6 +82,7 @@ var ProjectForm = React.createClass ({
 
         <button>Create Project</button>
         <br />
+        {this.props.children}
       </form>
     );
   }

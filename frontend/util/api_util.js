@@ -50,6 +50,19 @@ var ApiUtil = {
     });
   },
 
+  createReward: function (reward, callback) {
+    $.ajax({
+      type: "POST",
+      url: "api/projects/" + reward.project_id + "/rewards",
+      data: {reward: reward},
+      dataType: "json",
+      success: function (reward) {
+        RewardActions.receiveSingleReward(reward);
+        callback && callback(reward.project_id)
+      }
+    });
+  } ,
+
   // Must have a key of id in the project object for this to work
   editProject: function (project) {
     $.ajax({
