@@ -28,7 +28,7 @@ var RewardForm = React.createClass({
   render: function () {
     var link;
     var nextLink = "projects/" + this.state.project_id;
-  
+
     if (this.state.rewardSent === true) {
       link = <div className="reward-done"><Link to={nextLink}>Finish rewards</Link></div>
     } else {
@@ -39,17 +39,21 @@ var RewardForm = React.createClass({
       <form className="new-reward-form group" onSubmit={this.createReward}>
         <div className="new-reward-form-title">How will you thank the people who support you?</div>
 
-        <div className="new-reward-num">Reward</div>
-        <label className="pledge-amount">Pledge amount
-          <input
-            type="number"
-            valueLink={this.linkState("value")}
-          />
-        </label>
+        <div className="info group">
+          <div className="new-reward">Reward</div>
+          <div className="reward-form-info">
+            <label className="pledge-amount">Pledge amount
+              <input
+                type="number"
+                valueLink={this.linkState("value")}
+                />
+            </label>
 
-        <label className="pledge-description">Description
-          <textarea valueLink={this.linkState("description")} />
-        </label>
+            <label className="pledge-description">Description
+              <textarea valueLink={this.linkState("description")} />
+            </label>
+          </div>
+        </div>
         <button className="reward-submit">Create reward</button>
         {link}
       </form>

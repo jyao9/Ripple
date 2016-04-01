@@ -85,9 +85,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] create `Reward` model
 - [X] create `Backings` model
 - build out API, Flux loop, and components for:
-  - [ ] Reward CRUD
-  - [ ] adding rewards requires a project
-  - [ ] viewing rewards by project
+  - [X] Reward CRUD
+  - [X] adding rewards requires a project
+  - [X] viewing rewards by project
 - [ ] use CSS to style new views
 - [ ] pop up on screen when reward is clicked
 - [ ] reward amount gets added to project status
@@ -100,9 +100,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] update project index component based on nav bar
 - [ ] add handleChange function to project index component
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
+### Phase 7: Allow Complex Styling in Projects (0.5 days)
 
-**objective:** Enable complex styling of notes.
+**objective:** Enable complex styling of projects.
 
 - [ ] Integrate `react-quill` (based on Quill.js).
 - [ ] Use Rails helpers to sanitize HTML before rendering.
