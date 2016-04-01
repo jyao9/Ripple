@@ -39,7 +39,7 @@ var routes = (
     <Route path="login" component={SessionForm} />
     <Route path="projects/:projectId">
       <IndexRoute component={ProjectDetail} />
-      <Route path="rewards" component={RewardsIndex} />
+      <Route path="rewards" component={RewardsIndex} onEnter={_requireLoggedIn} />
     </Route>
   </Route>
 );

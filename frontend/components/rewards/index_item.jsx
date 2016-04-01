@@ -4,7 +4,8 @@ var RewardIndexItem = React.createClass({
   render: function () {
     return(
       <li className="reward-index-item">
-        {this.props.reward.description}
+        <div className="reward-value">${this.props.reward.value}</div>
+        <div className="reward-description">{this.props.reward.description}</div>
       </li>
     );
   }

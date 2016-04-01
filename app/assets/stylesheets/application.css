@@ -285,6 +285,7 @@ li {
 .new-user {
   width: 800px;
   margin: 0 auto;
+  margin-top: 50px;
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -348,6 +349,12 @@ li {
   border-radius: 5px;
   background: #E7F3ED;
   margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.reward-index-item:hover {
+  background: #96D0B2;
+  transition: background 0.8s ease;
 }
 
 .reward-header {
@@ -365,4 +372,9 @@ li {
   font-size: 14px;
   text-align: center;
   color: #aaa;
+}
+
+.reward-value {
+  font-weight: bold;
+  margin-bottom: 10px;
 }

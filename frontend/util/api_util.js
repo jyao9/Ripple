@@ -58,7 +58,7 @@ var ApiUtil = {
       dataType: "json",
       success: function (reward) {
         RewardActions.receiveSingleReward(reward);
-        callback && callback(reward.project_id)
+        callback && callback();
       }
     });
   } ,
@@ -115,10 +115,10 @@ var ApiUtil = {
     });
   },
 
-  fetchAllRewards: function (project_id) {
+  fetchAllRewards: function (projectId) {
     $.ajax({
       type: "GET",
-      url: "/api/projects/" + project_id + "/rewards",
+      url: "/api/projects/" + projectId + "/rewards",
       dataType: "json",
       success: function (rewards) {
         RewardActions.receiveAllRewards(rewards);
