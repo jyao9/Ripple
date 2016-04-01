@@ -265,7 +265,8 @@ li {
 }
 
 .sidebar-info {
-  padding: 20px 0;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .count {
@@ -276,6 +277,7 @@ li {
 .text {
   font-size: 14px;
   color: #aaa;
+  display: block;
 }
 
 .new-user {
@@ -313,4 +315,13 @@ li {
 
 .new-user button {
   margin-left: 375px;
+}
+
+.view-rewards a {
+  display: block;
+  width: 140px;
+  padding: 20px 0 20px 20px;
+  background: #3ECE7D;
+  color: #fff;
+  margin-top: 40px;
 }

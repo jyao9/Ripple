@@ -1,6 +1,7 @@
 var React = require('react');
 var ApiUtil = require('../../util/api_util.js');
 var ProjectStore = require('../../stores/project.js');
+var Link = require('react-router').Link;
 
 var ProjectDetail = React.createClass({
   getStateFromStore: function () {
@@ -33,6 +34,8 @@ var ProjectDetail = React.createClass({
       return <div></div>;
     }
 
+    var rewardLink = "projects/" + this.state.project.id + "/rewards"
+
     return(
       <section className="detail group">
         <div className="detail-header">
@@ -59,7 +62,10 @@ var ProjectDetail = React.createClass({
             <div className="count">{this.state.project.duration}</div>
             <span className="text">days to go</span>
           </div>
+
+          <div className="view-rewards"><Link to={rewardLink}>Back this project</Link></div>
         </div>
+        {this.props.children}
       </section>
     );
   }

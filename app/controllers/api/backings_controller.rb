@@ -7,9 +7,9 @@ class Api::BackingsController < ApplicationController
 
   def create
     @backing = Backing.new(backing_params)
-
+    @backing.user_id = current_user.id
     if @backing.save
-      render :index
+      render :show
     else
       render json: @backing.error.full_messages, status: 422
     end
@@ -18,7 +18,7 @@ class Api::BackingsController < ApplicationController
   private
 
   def backing_params
-    params.require(:backing).permit(:reward_id, :user_id)
+    params.require(:backing).permit(:reward_id)
   end
 
 end

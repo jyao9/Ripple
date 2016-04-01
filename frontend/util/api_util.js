@@ -1,5 +1,6 @@
 var ProjectActions = require("../actions/project_actions.js");
 var SessionActions = require('../actions/session_actions.js');
+var RewardActions = require('../actions/reward_actions.js');
 
 var ApiUtil = {
   fetchAllProjects: function () {
@@ -8,9 +9,6 @@ var ApiUtil = {
       url: "api/projects",
       dataType: "json",
       success: function (projects) {
-        projects.forEach(function (project) {
-          console.log(project.title);
-        });
         ProjectActions.receiveAllProjects(projects);
       }
     });
@@ -22,7 +20,6 @@ var ApiUtil = {
       url: "api/projects/" + id,
       dataType: "json",
       success: function (project) {
-        console.log(project.title);
         ProjectActions.receiveSingleProject(project);
       }
     });
@@ -35,7 +32,6 @@ var ApiUtil = {
       data: {project: project},
       dataType: "json",
       success: function (project) {
-        console.log(project.title);
         ProjectActions.receiveSingleProject(project);
         callback && callback(project.id);
       }
@@ -49,7 +45,6 @@ var ApiUtil = {
       data: {user: user},
       dataType: "json",
       success: function (user) {
-        console.log("User created");
         callback && callback();
       }
     });
@@ -93,7 +88,7 @@ var ApiUtil = {
     });
   },
 
-  fetchCurrentUser: function(completion) {
+  fetchCurrentUser: function (completion) {
     $.ajax({
       type: "GET",
       url: "/api/session",
@@ -103,6 +98,17 @@ var ApiUtil = {
       },
       complete: function() {
         completion && completion();
+      }
+    });
+  },
+
+  fetchAllRewards: function (project_id) {
+    $.ajax({
+      type: "GET",
+      url: "/api/projects/" + project_id + "/rewards",
+      dataType: "json",
+      success: function (rewards) {
+        RewardActions.receiveAllRewards(rewards);
       }
     });
   }

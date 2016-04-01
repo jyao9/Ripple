@@ -14,6 +14,7 @@ var ProjectDetail = require('./components/projects/detail.jsx');
 var UserForm = require('./components/users/form.jsx');
 var SessionForm = require('./components/session/form.jsx');
 var SessionStore = require('./stores/session.js');
+var RewardsIndex = require('./components/rewards/index.jsx');
 
 var App = React.createClass({
   render: function () {
@@ -32,7 +33,10 @@ var routes = (
     <Route path="projects/new" component={ProjectForm} onEnter={_requireLoggedIn} />
     <Route path="users/new" component={UserForm} />
     <Route path="login" component={SessionForm} />
-    <Route path="projects/:projectId" component={ProjectDetail} />
+    <Route path="projects/:projectId">
+      <IndexRoute component={ProjectDetail} />
+      <Route path="rewards" component={RewardsIndex} />
+    </Route>
   </Route>
 );
 
