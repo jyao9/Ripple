@@ -1,6 +1,8 @@
 var React = require('react');
 var ApiUtil = require('../../util/api_util.js');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var Link = require('react-router').Link;
+
 
 var SessionForm = React.createClass ({
   contextTypes: {
@@ -44,6 +46,12 @@ var SessionForm = React.createClass ({
         </label>
 
         <button>Sign in</button>
+
+        <div className="account-change">New to Ripple?
+          <Link to="users/new">Sign up!</Link>
+        </div>
+        <span className="or">----------------- or -----------------</span>
+        <div className="fb"><a href="/auth/facebook">Log in with Facebook</a></div>
       </form>
     );
   }

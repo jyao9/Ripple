@@ -11,13 +11,13 @@ Ripple is a web application inspired by KickStarter built using Ruby on Rails an
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Create, edit, and view projects
-- [ ] Create rewards for projects
-- [ ] Fund/select rewards from projects
+- [X] Create an account
+- [X] Log in / Log out
+- [X] Create and view projects
+- [X] Create rewards for projects
+- [X] Fund/select rewards from projects
 - [ ] Search for projects by category or name
-- [ ] Click on project icon to see the details about that specific project
+- [X] Click on project icon to see the details about that specific project
 
 ## Design Docs
 * [View Wireframes][views]

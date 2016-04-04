@@ -52,8 +52,8 @@ li {
 }
 
 .header-nav {
-  width: 1000px;
-  margin: 0 auto;
+  width: 1300px;
+  margin-left: 45px;
 }
 
 .header-nav a {
@@ -96,21 +96,31 @@ li {
   margin-top: 25px;
 }
 
+.guest {
+  padding: 28px 20px 25px 20px;
+  cursor: pointer;
+}
+
+.guest:hover {
+  transition: background 0.8s ease, color 0.8s ease;
+  background: #E0EAF5;
+  color: #aaa;
+  cursor: pointer;
+}
+
 .user-info > div {
   display: block;
   float: left;
 }
 
 .user-info a {
-  padding-top: 28px;
-  padding-bottom: 25px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 28px 20px 25px 20px;
 }
 
 .user-info a:hover {
-  transition: background 0.8s ease;
+  transition: background 0.8s ease, color 0.8s ease;
   background: #E0EAF5;
+  color: #aaa;
   cursor: pointer;
 }
 
@@ -289,7 +299,7 @@ li {
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 50px;
+  padding: 50px 50px 150px 50px;
 }
 
 .new-user .title {
@@ -314,6 +324,19 @@ li {
   padding-left: 5px;
   vertical-align: middle;
   margin-left: 5px;
+}
+
+.account-change {
+  float: left;
+  margin-top: 29px;
+  margin-left: 314px;
+  display: block;
+}
+
+.account-change a {
+  color: #2540DB;
+  left: 5px;
+  position: relative;
 }
 
 .new-user button {
@@ -473,5 +496,28 @@ li {
   border: #60CCA3;
   border-radius: 5px;
   color: #fff;
+  font-weight: bold;
+}
+
+.or {
+  display: block;
+  position: relative;
+  margin-top: 90px;
+  margin-left: 310px;
+  color: #aaa;
+}
+
+
+.fb a {
+  background: #3B5998;
+  position: relative;
+  color: #fff;
+  padding: 15px 115px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-top: 30px;
+  top: 45px;
+  left: 220px;
+  font-family: sans-serif;
   font-weight: bold;
 }

@@ -49,6 +49,11 @@ User.create!(
   password: "password3"
 )
 
+User.create!(
+  username: "Guest",
+  password: "Password"
+)
+
 Reward.create!(
   project_id: 1,
   value: 1,

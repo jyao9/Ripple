@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :username, :session_token, :password_digest, presence: true
+  validates :username, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
   has_many(
@@ -36,6 +36,20 @@ class User < ActiveRecord::Base
     user = User.find_by(username: username)
     return nil unless user && user.is_password?(password)
     user
+  end
+
+  def self.find_or_create_by_auth_hash(auth_hash)
+    provider = auth_hash[:provider]
+    uid = auth_hash[:uid]
+
+    user = User.find_by(provider: provider, uid: uid)
+    return user if user
+
+    User.create(
+      provider: provider,
+      uid: uid,
+      username: auth_hash[:extra][:raw_info][:name]
+    )
   end
 
   def password=(password)

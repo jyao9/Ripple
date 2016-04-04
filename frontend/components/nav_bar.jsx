@@ -34,6 +34,10 @@ var NavBar = React.createClass({
     this.setState({ currentUser: null })
   },
 
+  signInAsGuest: function () {
+    ApiUtil.login({ username: "Guest", password: "Password" }, this.handleChange)
+  },
+
   render: function () {
     var button;
     var user;
@@ -43,9 +47,10 @@ var NavBar = React.createClass({
       button = <button onClick={this.handleClick}>Logout</button>
       user = <div className="user">Me</div>;
     } else {
-      sessionLinks = sessionLinks = <div className="user-info group">
+      sessionLinks = <div className="user-info group">
         <div><Link to="users/new">Sign Up</Link></div>
         <div><Link to="login">Sign in</Link></div>
+        <div onClick={this.signInAsGuest} className="guest">Sign in as guest</div>
         </div>
     }
 

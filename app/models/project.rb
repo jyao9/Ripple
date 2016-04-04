@@ -30,6 +30,7 @@ class Project < ActiveRecord::Base
   def status
 
     sql_sum = self.backings.select("SUM(rewards.value) AS status")
+    return 0 if sql_sum[0].status == nil
     return sql_sum[0].status
 
   end
