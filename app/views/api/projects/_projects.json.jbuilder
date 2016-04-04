@@ -5,4 +5,5 @@ json.extract!(
 
 json.author_name project.author.username
 json.num_of_backers project.backers.count
+
 json.status project.status

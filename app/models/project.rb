@@ -28,12 +28,10 @@ class Project < ActiveRecord::Base
   )
 
   def status
-    sum = 0
-    sql_sum = self.backings.group("backings.id").select("SUM(rewards.value) AS status")
-    sql_sum.each do |backing|
-      sum += backing.status
-    end
-    return sum
+
+    sql_sum = self.backings.select("SUM(rewards.value) AS status")
+    return sql_sum[0].status
+
   end
 
 end
