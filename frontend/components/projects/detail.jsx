@@ -34,6 +34,11 @@ var ProjectDetail = React.createClass({
       return <div></div>;
     }
 
+    var today = Date.now();
+    var projectStart = Date.parse(this.state.project.created_at);
+    var daysPast = Math.floor((today - projectStart)/(24 * 60 * 60 * 1000));
+    var daysLeft = this.state.project.duration - daysPast;
+
     var rewardLink = "projects/" + this.state.project.id + "/rewards"
 
     return(
@@ -59,7 +64,7 @@ var ProjectDetail = React.createClass({
           </div>
 
           <div className="sidebar-info">
-            <div className="count">{this.state.project.duration}</div>
+            <div className="count">{daysLeft}</div>
             <span className="text">days to go</span>
           </div>
 

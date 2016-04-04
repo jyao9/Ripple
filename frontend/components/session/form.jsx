@@ -45,12 +45,12 @@ var SessionForm = React.createClass ({
           />
         </label>
 
-        <button>Sign in</button>
+        <button className="enter">Sign in</button>
 
         <div className="account-change">New to Ripple?
           <Link to="users/new">Sign up!</Link>
         </div>
-        <span className="or">----------------- or -----------------</span>
+        <span className="or">------------------------------------- or -------------------------------------</span>
         <div className="fb"><a href="/auth/facebook">Log in with Facebook</a></div>
       </form>
     );

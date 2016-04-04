@@ -43,11 +43,11 @@ var UserForm = React.createClass ({
           />
         </label>
 
-        <button>Sign up</button>
+        <button className="enter">Sign up</button>
         <div className="account-change">Have an account?
           <Link to="login">Log in</Link>
         </div>
-        <span className="or">----------------- or -----------------</span>
+        <span className="or">------------------------------------- or -------------------------------------</span>
         <div className="fb"><a href="/auth/facebook">Sign in with Facebook</a></div>
       </form>
     );

@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body, header, nav, h1, h3, ul, li, div, a {
+body, header, nav, h1, h3, ul, li, div, a, button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -54,6 +54,7 @@ li {
 .header-nav {
   width: 1300px;
   margin-left: 45px;
+  position: relative;
 }
 
 .header-nav a {
@@ -76,11 +77,6 @@ li {
   font-size: 18px;
 }
 
-.header-nav button {
-  float: right;
-  margin-top: 30px;
-}
-
 .header-nav div {
   float: right;
   margin-left: 20px;
@@ -93,7 +89,7 @@ li {
 }
 
 .header-nav .user {
-  margin-top: 25px;
+  margin-top: 28px;
 }
 
 .guest {
@@ -339,10 +335,6 @@ li {
   position: relative;
 }
 
-.new-user button {
-  margin-left: 375px;
-}
-
 .view-rewards a {
   display: block;
   width: 140px;
@@ -503,7 +495,7 @@ li {
   display: block;
   position: relative;
   margin-top: 90px;
-  margin-left: 310px;
+  margin-left: 210px;
   color: #aaa;
 }
 
@@ -520,4 +512,30 @@ li {
   left: 220px;
   font-family: sans-serif;
   font-weight: bold;
+}
+
+.enter {
+  background: #2BDE73;
+  position: relative;
+  color: #fff;
+  padding: 15px 171px;
+  border-radius: 10px;
+  left: 220px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.logout {
+  float: right;
+  padding: 28px 20px 25px 20px;
+  font-size: 24px;
+  color: #ccc;
+
+}
+
+.logout:hover {
+  transition: background 0.8s ease, color 0.8s ease;
+  background: #E0EAF5;
+  color: #aaa;
+  cursor: pointer;
 }
