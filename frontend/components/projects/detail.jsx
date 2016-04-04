@@ -30,6 +30,8 @@ var ProjectDetail = React.createClass({
   },
 
   render: function () {
+  
+
     if (this.state.project === undefined) {
       return <div></div>;
     }
@@ -49,12 +51,12 @@ var ProjectDetail = React.createClass({
 
         <div className="content-sidebar">
           <div className="sidebar-info">
-            <div className="count">0</div>
+            <div className="count">{this.state.project.num_of_backers}</div>
             <span className="text">backers</span>
           </div>
 
           <div className="sidebar-info">
-            <div className="count">$0</div>
+            <div className="count">${this.state.project.status}</div>
             <span className="text">pledged of ${this.state.project.goal} goal</span>
           </div>
 

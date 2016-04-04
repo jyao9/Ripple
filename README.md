@@ -88,17 +88,18 @@ progress. Put an x between the brackets for a checkmark: [x] -->
   - [X] Reward CRUD
   - [X] adding rewards requires a project
   - [X] viewing rewards by project
-- [ ] use CSS to style new views
-- [ ] pop up on screen when reward is clicked
-- [ ] reward amount gets added to project status
-- [ ] update project index page of that reward
+- [X] use CSS to style new views
+- [X] pop up on screen when reward is clicked
+- [X] reward amount gets added to project status
+- [X] update project index page of that reward
 
-### Phase 6: Search Bar (0.5 day)
+### Phase 6: Search Bar and Picture Upload (1 day)
 - [ ] add real time search to projects index page
 - [ ] search through projects for specific words
 - [ ] projects index page will render matching projects
 - [ ] update project index component based on nav bar
 - [ ] add handleChange function to project index component
+- [ ] add feature to allow users to upload pictures to projects
 
 ### Phase 7: Allow Complex Styling in Projects (0.5 days)
 

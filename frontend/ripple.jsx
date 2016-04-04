@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Modal = require('react-modal');
 var ApiUtil = require('./util/api_util.js');
 
 var Router = require('react-router').Router;
@@ -45,6 +46,8 @@ var routes = (
 );
 
 document.addEventListener("DOMContentLoaded", function () {
+  Modal.setAppElement(document.getElementById('root'));
+
   ReactDOM.render(
     <Router history={hashHistory}>{routes}</Router>,
     document.getElementById('root')

@@ -61,7 +61,22 @@ var ApiUtil = {
         callback && callback();
       }
     });
-  } ,
+  },
+
+  createBacking: function (backing, project_id, callback) {
+    $.ajax({
+      type: "POST",
+      url: "api/projects/" + project_id + "/backings",
+      data: {backing: backing},
+      dataType: "json",
+      success: function (backing) {
+        callback && callback();
+      },
+      error: function () {
+        console.log("Backing creation failed");
+      }
+    });
+  },
 
   // Must have a key of id in the project object for this to work
   editProject: function (project) {

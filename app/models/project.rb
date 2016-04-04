@@ -27,4 +27,13 @@ class Project < ActiveRecord::Base
     source: :user
   )
 
+  def status
+    sum = 0
+    sql_sum = self.backings.group("backings.id").select("SUM(rewards.value) AS status")
+    sql_sum.each do |backing|
+      sum += backing.status
+    end
+    return sum
+  end
+
 end
