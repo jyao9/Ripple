@@ -48,7 +48,7 @@ var ProjectDetail = React.createClass({
           <div className="project-author"><h3>by {this.state.project.author_name}</h3></div>
         </div>
         <div className="content-main">
-          <div className="project-img">Project image here</div>
+          <img className="preview-image" src={this.state.project.image_url} />
           <div className="project-blurb">{this.state.project.blurb}</div>
         </div>
 

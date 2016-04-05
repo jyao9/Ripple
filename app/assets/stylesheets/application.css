@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body, header, nav, h1, h3, ul, li, div, a, button {
+body, header, nav, h1, h3, ul, li, div, a, img, button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -38,6 +38,12 @@ ul {
 
 li {
   text-decoration: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .group:after {
@@ -146,6 +152,7 @@ li {
   background: #9AC9EA;
   border-radius: 5px;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .project-index-item:hover {
@@ -159,7 +166,7 @@ li {
   font-size: 16px;
   font-weight: bold;
   width: 300px;
-  height: 350px;
+  height: 195px;
   line-height: 350px;
   text-align: center;
 }
@@ -552,4 +559,16 @@ li {
   color: #fff;
   padding: 10px 29px;
   border-radius: 5px;
+}
+
+.new-project img {
+  margin-left: 305px;
+}
+
+.icon {
+  position: absolute;
+}
+
+.image-input {
+  line-height: 10px;
 }

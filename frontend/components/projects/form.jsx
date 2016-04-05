@@ -76,9 +76,10 @@ var ProjectForm = React.createClass ({
             />
         </label>
 
-        <label>Image
+        <label>Image:
           <input
             type="file"
+            className="image-input"
             onChange={this.handleFileChange}
             />
         </label>

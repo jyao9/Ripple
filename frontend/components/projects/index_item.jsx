@@ -11,8 +11,9 @@ var ProjectIndexItem = React.createClass({
 
   render: function () {
     return(
-      <li className="project-index-item" onClick={this.showDetail}>
+      <li className="project-index-item group" onClick={this.showDetail}>
         <div className="icon-title">{this.props.project.title}</div>
+        <img className="icon" className="preview-image" src={this.props.project.image_url} />
       </li>
     );
   }
