@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
   validates :title, :category, :blurb, :author_id, :duration, :goal, presence: true
+  has_attached_file :image, default_url: "missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to(
     :author,
@@ -28,11 +30,9 @@ class Project < ActiveRecord::Base
   )
 
   def status
-
     sql_sum = self.backings.select("SUM(rewards.value) AS status")
     return 0 if sql_sum[0].status == nil
     return sql_sum[0].status
-
   end
 
 end

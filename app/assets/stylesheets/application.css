@@ -539,3 +539,17 @@ li {
   color: #aaa;
   cursor: pointer;
 }
+
+.new-project button {
+  background: #32CFAE;
+  color: #fff;
+  padding: 10px 29px;
+  border-radius: 5px;
+}
+
+.new-reward-form button {
+  background: #32CFAE;
+  color: #fff;
+  padding: 10px 29px;
+  border-radius: 5px;
+}

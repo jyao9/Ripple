@@ -29,7 +29,9 @@ var ApiUtil = {
     $.ajax({
       type: "POST",
       url: "api/projects",
-      data: {project: project},
+      processData: false,
+      contentType: false,
+      data: project,
       dataType: "json",
       success: function (project) {
         ProjectActions.receiveSingleProject(project);

@@ -11,22 +11,36 @@ var ProjectForm = React.createClass ({
   mixins: [LinkedStateMixin],
 
   getInitialState: function () {
-    return({ title: null, category: null, blurb: null, duration: null, goal: null, status: 0 });
+    return({ title: "", category: null, blurb: "", duration: null, goal: null, imageFile: null, imageUrl: null });
   },
 
-  createProject: function (event) {
-    event.preventDefault();
-    var newProject = this.state;
+  createProject: function (e) {
+    e.preventDefault();
+    var formData = new FormData();
+    formData.append("project[title]", this.state.title);
+    formData.append("project[category]", this.state.category);
+    formData.append("project[blurb]", this.state.blurb);
+    formData.append("project[duration]", this.state.duration);
+    formData.append("project[goal]", this.state.goal);
+    formData.append("project[image]", this.state.imageFile);
 
-    // ApiUtil.createProject(newProject, function (id) {
-    //   this.context.router.push("projects/" + id);
-    // }.bind(this));
-
-    ApiUtil.createProject(newProject, function (projectId) {
+    ApiUtil.createProject(formData, function (projectId) {
       this.context.router.push({pathname: "projects/new/rewards", query: {}, state: {projectId: projectId}});
     }.bind(this));
 
-    this.setState({ title: null, category: null, blurb: null, duration: null, goal: null});
+    this.setState({ title: null, category: null, blurb: null, duration: null, goal: null, imageFile: null, imageUrl: null});
+  },
+
+  handleFileChange: function (e) {
+    var file = e.currentTarget.files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      var result = reader.result;
+      this.setState({ imageFile: file, imageUrl: result });
+    }.bind(this);
+
+    reader.readAsDataURL(file);
   },
 
   render: function () {
@@ -61,6 +75,15 @@ var ProjectForm = React.createClass ({
             valueLink={this.linkState("title")}
             />
         </label>
+
+        <label>Image
+          <input
+            type="file"
+            onChange={this.handleFileChange}
+            />
+        </label>
+
+        <img className="preview-image" src={this.state.imageUrl} />
 
         <label>Blurb:
           <textarea valueLink={this.linkState("blurb")} />

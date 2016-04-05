@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404200649) do
+ActiveRecord::Schema.define(version: 20160405144333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,18 @@ ActiveRecord::Schema.define(version: 20160404200649) do
   add_index "backings", ["user_id"], name: "index_backings_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.string   "category",   null: false
-    t.text     "blurb",      null: false
-    t.integer  "author_id",  null: false
-    t.integer  "duration",   null: false
-    t.integer  "goal",       null: false
+    t.string   "title",              null: false
+    t.string   "category",           null: false
+    t.text     "blurb",              null: false
+    t.integer  "author_id",          null: false
+    t.integer  "duration",           null: false
+    t.integer  "goal",               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "projects", ["author_id"], name: "index_projects_on_author_id", using: :btree
