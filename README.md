@@ -16,7 +16,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] Create and view projects
 - [X] Create rewards for projects
 - [X] Fund/select rewards from projects
-- [ ] Search for projects by category or name
+- [ ] Search for projects by username or title
 - [X] Click on project icon to see the details about that specific project
 
 ## Design Docs
@@ -99,7 +99,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] projects index page will render matching projects
 - [ ] update project index component based on nav bar
 - [ ] add handleChange function to project index component
-- [ ] add feature to allow users to upload pictures to projects
+- [X] add feature to allow users to upload pictures to projects
+- [X] project index item and project detail display images
 
 ### Phase 7: Allow Complex Styling in Projects (0.5 days)
 
@@ -113,9 +114,9 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **objective:** Make the site feel more cohesive and awesome.
 
-- [ ] Get feedback on my UI from others
+- [ X Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [X] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
 - [ ] Users can comment on projects they have funded
