@@ -336,8 +336,9 @@ img {
 }
 
 .detail {
-  width: 900px;
+  padding: 0 265px;
   margin: 0 auto;
+  position: relative;
 }
 
 .detail-header {
@@ -361,6 +362,14 @@ img {
 .content-sidebar {
   float: left;
   width: 200px;
+}
+
+.detail-bottom {
+  background: #fff;
+  margin: 20px -265px 0 -265px;
+  height: auto;
+  padding: 50px 0 50px 250px;
+  border-top: 1px solid #ccc;
 }
 
 .project-title {

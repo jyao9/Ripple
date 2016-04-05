@@ -43,33 +43,46 @@ var ProjectDetail = React.createClass({
 
     return(
       <section className="detail group">
-        <div className="detail-header">
-          <div className="project-title"><h1>{this.state.project.title}</h1></div>
-          <div className="project-author"><h3>by {this.state.project.author_name}</h3></div>
-        </div>
-        <div className="content-main">
-          <img className="preview-image" src={this.state.project.image_url} />
-          <div className="project-blurb">{this.state.project.blurb}</div>
-        </div>
-
-        <div className="content-sidebar">
-          <div className="sidebar-info">
-            <div className="count">{this.state.project.num_of_backers}</div>
-            <span className="text">backers</span>
+        <div className="detail-top group">
+          <div className="detail-header">
+            <div className="project-title"><h1>{this.state.project.title}</h1></div>
+            <div className="project-author"><h3>by {this.state.project.author_name}</h3></div>
+          </div>
+          <div className="content-main">
+            <img className="preview-image" src={this.state.project.image_url} />
+            <div className="project-blurb">{this.state.project.blurb}</div>
           </div>
 
-          <div className="sidebar-info">
-            <div className="count">${this.state.project.status}</div>
-            <span className="text">pledged of ${this.state.project.goal} goal</span>
-          </div>
+          <div className="content-sidebar">
+            <div className="sidebar-info">
+              <div className="count">{this.state.project.num_of_backers}</div>
+              <span className="text">backers</span>
+            </div>
 
-          <div className="sidebar-info">
-            <div className="count">{daysLeft}</div>
-            <span className="text">days to go</span>
-          </div>
+            <div className="sidebar-info">
+              <div className="count">${this.state.project.status}</div>
+              <span className="text">pledged of ${this.state.project.goal} goal</span>
+            </div>
 
-          <div className="view-rewards"><Link to={rewardLink}>Back this project</Link></div>
+            <div className="sidebar-info">
+              <div className="count">{daysLeft}</div>
+              <span className="text">days to go</span>
+            </div>
+
+            <div className="view-rewards"><Link to={rewardLink}>Back this project</Link></div>
+          </div>
         </div>
+
+        <div className="detail-bottom group">
+          <div className="content-main">
+            Comments:
+          </div>
+
+          <div className="content-sidebar">
+            Rewards
+          </div>
+        </div>
+
         {this.props.children}
       </section>
     );
