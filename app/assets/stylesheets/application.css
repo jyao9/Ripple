@@ -101,6 +101,7 @@ img {
 .guest {
   padding: 28px 20px 25px 20px;
   cursor: pointer;
+  transition: background 0.8s ease;
 }
 
 .guest:hover {
@@ -117,6 +118,7 @@ img {
 
 .user-info a {
   padding: 28px 20px 25px 20px;
+  transition: background 0.8s ease;
 }
 
 .user-info a:hover {
@@ -133,6 +135,7 @@ img {
   color: #5581AD;
   padding-top: 11px;
   padding-bottom: 12px;
+  transition: background 0.8s ease;
 }
 
 .project-list-item:hover {
@@ -170,6 +173,7 @@ img {
   background: #569899;
   opacity: 0;
   z-index: 1px;
+  transition: opacity 0.8s ease;
 }
 
 .project-index-item:hover:after {
@@ -324,6 +328,7 @@ img {
   position: relative;
   margin-left: 400px;
   margin-bottom: 20px;
+  transition: background 0.8s ease;
 }
 
 .new-project button:hover {
@@ -460,6 +465,7 @@ img {
   color: #fff;
   margin-top: 40px;
   border-radius: 10px;
+  transition: background 0.8s ease;
 }
 
 .view-rewards a:hover {
@@ -488,6 +494,7 @@ img {
   background: #E7F3ED;
   margin-bottom: 20px;
   cursor: pointer;
+  transition: background 0.8s ease;
 }
 
 .reward-index-item:hover {
@@ -653,7 +660,7 @@ img {
   padding: 28px 20px 25px 20px;
   font-size: 24px;
   color: #ccc;
-
+  transition: background 0.8s ease;
 }
 
 .logout:hover {
