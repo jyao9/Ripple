@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
+  include PgSearch
+  multisearchable :against => [:username]
+
   has_many(
     :projects,
     class_name: "Project",

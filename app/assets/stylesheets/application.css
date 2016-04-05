@@ -85,7 +85,6 @@ img {
 
 .header-nav div {
   float: right;
-  margin-left: 20px;
   font-size: 24px;
   color: #ccc;
 }
@@ -96,12 +95,13 @@ img {
 
 .header-nav .user {
   margin-top: 28px;
+  padding: 0 15px;
 }
 
 .guest {
   padding: 28px 20px 25px 20px;
   cursor: pointer;
-  transition: background 0.8s ease;
+  transition: background 0.8s ease, color 0.8s ease;
 }
 
 .guest:hover {
@@ -660,7 +660,7 @@ img {
   padding: 28px 20px 25px 20px;
   font-size: 24px;
   color: #ccc;
-  transition: background 0.8s ease;
+  transition: background 0.8s ease, color 0.8s ease;
 }
 
 .logout:hover {

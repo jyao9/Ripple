@@ -40,14 +40,15 @@ User.create!(
 )
 
 User.create!(
+username: "Mac Chedder",
+password: "password"
+)
+
+User.create!(
   username: "Color Blind Fashionista",
   password: "password"
 )
 
-User.create!(
-  username: "Mac Chedder",
-  password: "password"
-)
 
 User.create!(
   username: "Guest",

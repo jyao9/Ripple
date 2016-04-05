@@ -38,6 +38,8 @@ var NavBar = React.createClass({
     ApiUtil.login({ username: "Guest", password: "Password" }, this.handleChange)
   },
 
+  // Add document.addEventListener with click to setSet for query to an empty string
+
   render: function () {
     var button;
     var user;
