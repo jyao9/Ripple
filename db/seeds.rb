@@ -1,47 +1,11 @@
-Project.create!(
-  title: "Make Sennacy a Website",
-  category: "Technology",
-  blurb: "All hail Sennacy. We must make a website for her. I mean we already made an html template for a website for it so why not just continue from there?",
-  author_id: 1,
-  duration: 14,
-  goal: 100,
-)
-
-Project.create!(
-  title: "World's Best Mac and Cheese",
-  category: "Food",
-  blurb: "I want to make the best mac and cheese in the world. I like cheese. I also like maccaroni. If I surpass my goal, I may even put in some bacon.",
-  author_id: 2,
-  duration: 30,
-  goal: 50,
-)
-
-Project.create!(
-  title: "Gold and White Dress",
-  category: "Fashion",
-  blurb: "That dress is totally white and gold. I want to make it but with real gold. Trust me, it's totally practical.",
-  author_id: 3,
-  duration: 30,
-  goal: 500000,
-)
-
-Project.create!(
-  title: "Sennacy the Game",
-  category: "Games",
-  blurb: "A game where you try to open as many doors as possible as a cat. I couldn't imagine a more fun game. Golly, this game could even become more popular than cat clicker.",
-  author_id: 1,
-  duration: 30,
-  goal: 200000,
-)
-
 User.create!(
   username: "Tommy",
   password: "password"
 )
 
 User.create!(
-username: "Mac Chedder",
-password: "password"
+  username: "Mac Chedder",
+  password: "password"
 )
 
 User.create!(
@@ -54,6 +18,62 @@ User.create!(
   username: "Guest",
   password: "Password"
 )
+
+Project.create!(
+  title: "Make Sennacy a Website",
+  category: "Technology",
+  blurb: "All hail Sennacy. We must make a website for her. I mean we already made an html template for a website for it so why not just continue from there?",
+  author_id: 1,
+  duration: 14,
+  goal: 100,
+)
+
+project = Project.last
+file = File.open('app/assets/images/cat_website.jpg')
+project.image = file
+project.save!
+
+Project.create!(
+  title: "World's Best Mac and Cheese",
+  category: "Food",
+  blurb: "I want to make the best mac and cheese in the world. I like cheese. I also like maccaroni. If I surpass my goal, I may even put in some bacon.",
+  author_id: 2,
+  duration: 30,
+  goal: 50,
+)
+
+project = Project.last
+file = File.open('app/assets/images/mac_cheese.jpg')
+project.image = file
+project.save!
+
+Project.create!(
+  title: "Gold and White Dress",
+  category: "Fashion",
+  blurb: "That dress is totally white and gold. I want to make it but with real gold. Trust me, it's totally practical.",
+  author_id: 3,
+  duration: 30,
+  goal: 500000,
+)
+
+project = Project.last
+file = File.open('app/assets/images/gold_white.jpg')
+project.image = file
+project.save!
+
+Project.create!(
+  title: "Sennacy the Game",
+  category: "Games",
+  blurb: "A game where you try to open as many doors as possible as a cat. I couldn't imagine a more fun game. Golly, this game could even become more popular than cat clicker.",
+  author_id: 1,
+  duration: 30,
+  goal: 200000,
+)
+
+project = Project.last
+file = File.open('app/assets/images/cat_game.jpg')
+project.image = file
+project.save!
 
 Reward.create!(
   project_id: 1,
