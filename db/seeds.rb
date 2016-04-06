@@ -43,7 +43,7 @@ Project.create!(
 )
 
 project = Project.last
-file = File.open('app/assets/images/mac_cheese.jpg')
+file = File.open('app/assets/images/mac_and_cheese.jpg')
 project.image = file
 project.save!
 
