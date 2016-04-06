@@ -94,6 +94,7 @@ img {
 }
 
 .search-bar {
+  width: 480px;
   margin-top: 21px;
   margin-left: 20px;
   height: 35px;
@@ -120,6 +121,23 @@ img {
   text-align: center;
   padding: 10px 0;
   font-size: 20px;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #90DFFA
+  }
+  50% {
+    background-color: #388F90;
+  }
+  100% {
+    background-color: #90DFFA
+  }
 }
 
 .search-results > .project-index-item {

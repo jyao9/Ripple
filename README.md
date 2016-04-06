@@ -114,7 +114,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **objective:** Make the site feel more cohesive and awesome.
 
-- [ X Get feedback on my UI from others
+- [X] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
 - [X] Add modals, transitions, and other styling flourishes.
 
