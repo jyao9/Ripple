@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true}
 
   include PgSearch
+  PgSearch.multisearch_options = {
+    :using => {:tsearch => {:prefix => true}},
+  }
+
   multisearchable :against => [:username]
 
   has_many(

@@ -1,7 +1,9 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var SessionStore = require('../stores/session.js');
+var SearchResultsStore = require("../stores/results.js");
 var ApiUtil = require('../util/api_util.js');
+var SearchResults = require('./search_results.jsx');
 
 var NavBar = React.createClass({
   contextTypes: {
@@ -9,24 +11,35 @@ var NavBar = React.createClass({
   },
 
   getInitialState: function() {
-    return {
-      currentUser: null
-    };
+    return {currentUser: null, query: ""};
   },
 
   componentDidMount: function() {
-    this.sessionStoreToken = SessionStore.addListener(this.handleChange);
-    this.handleChange();
+    this.sessionStoreToken = SessionStore.addListener(this.handleSessionChange);
+    this.storeListener = SearchResultsStore.addListener(this.handleResultChange);
+    this.handleSessionChange();
+    this.handleResultChange();
+    document.addEventListener("click", this.exitSearch);
+  },
+
+  exitSearch: function () {
+    this.setState({ query: "" });
   },
 
   componentWillUnmount: function() {
     this.sessionStoreToken.remove();
+    this.storeListener.remove();
+    document.removeEventListener("click", this.exitSearch);
   },
 
-  handleChange: function() {
+  handleSessionChange: function() {
     if (SessionStore.isLoggedIn()) {
       this.setState({ currentUser: SessionStore.currentUser() });
     }
+  },
+
+  handleResultChange: function () {
+    this.forceUpdate();
   },
 
   handleClick: function () {
@@ -34,16 +47,28 @@ var NavBar = React.createClass({
     this.setState({ currentUser: null })
   },
 
-  signInAsGuest: function () {
-    ApiUtil.login({ username: "Guest", password: "Password" }, this.handleChange)
+  handleInputChange: function (e) {
+    var query = e.currentTarget.value;
+    this.setState({ query: query }, function () {
+      if (query.length > 1) {
+        this.search();
+      }
+    }.bind(this));
   },
 
-  // Add document.addEventListener with click to setSet for query to an empty string
+  search: function (e) {
+    ApiUtil.search(this.state.query);
+  },
+
+  signInAsGuest: function () {
+    ApiUtil.login({ username: "Guest", password: "Password" }, this.handleSessionChange)
+  },
 
   render: function () {
     var button;
     var user;
     var sessionLinks;
+    var searchResults;
 
     if (this.state.currentUser) {
       button = <button className="logout" onClick={this.handleClick}>Logout</button>
@@ -56,17 +81,32 @@ var NavBar = React.createClass({
         </div>
     }
 
+    if (this.state.query) {
+      searchResults = <SearchResults projects={SearchResultsStore.all()}/>
+    }
+
     return(
       <header className="header group">
         <nav className="header-nav group">
           <ul className="header-list group">
-            <h1 className="header-logo"><Link to="/">Ripple</Link></h1>
-            <li className="project-list-item"><Link to="projects/new">Start a project</Link></li>
+            <li>
+              <h1 className="header-logo">
+                <Link to="/">Ripple</Link>
+              </h1>
+            </li>
+            <li className="project-list-item">
+              <Link to="projects/new">Start a project</Link>
+            </li>
+            <li>
+              <input type="text" onChange={ this.handleInputChange } />
+            </li>
           </ul>
+
           {sessionLinks}
           {user}
           {button}
         </nav>
+        {searchResults}
       </header>
     );
   }

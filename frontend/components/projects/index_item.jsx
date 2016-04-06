@@ -27,6 +27,10 @@ var ProjectIndexItem = React.createClass({
     var projectStart = Date.parse(this.props.project.created_at);
     var daysPast = Math.floor((today - projectStart)/(24 * 60 * 60 * 1000));
     var daysLeft = this.props.project.duration - daysPast;
+    
+    if (daysLeft < 0) {
+      daysLeft = 0;
+    }
 
     return(
       <li className="project-index-item group" onClick={this.showDetail}>
@@ -40,7 +44,7 @@ var ProjectIndexItem = React.createClass({
         </div>
         <br />
         <div className="icon-info group">
-          <div className="num">{barWidth}%</div>
+          <div className="num">{Math.floor(barWidth)}%</div>
           <span>funded</span>
         </div>
 

@@ -4,7 +4,12 @@ class Project < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   include PgSearch
-  multisearchable :against => [:title]
+  PgSearch.multisearch_options = {
+    :using => {:tsearch => {:prefix => true}},
+  }
+  
+  multisearchable :against => [:title],
+                  :using => {:tsearch => {:prefix => true}}
 
   belongs_to(
     :author,

@@ -39,6 +39,10 @@ var ProjectDetail = React.createClass({
     var daysPast = Math.floor((today - projectStart)/(24 * 60 * 60 * 1000));
     var daysLeft = this.state.project.duration - daysPast;
 
+    if (daysLeft < 0) {
+      daysLeft = 0;
+    }
+
     var rewardLink = "projects/" + this.state.project.id + "/rewards"
 
     return(

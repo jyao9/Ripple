@@ -1,6 +1,7 @@
 var ProjectActions = require("../actions/project_actions.js");
 var SessionActions = require('../actions/session_actions.js');
 var RewardActions = require('../actions/reward_actions.js');
+var SearchResultActions = require('../actions/search_result_actions.js');
 
 var ApiUtil = {
   fetchAllProjects: function () {
@@ -140,6 +141,25 @@ var ApiUtil = {
       success: function (rewards) {
         RewardActions.receiveAllRewards(rewards);
       }
+    });
+  },
+
+  search: function (query) {
+    SearchResultActions.searchInitiate();
+    $.ajax({
+      type: "GET",
+      url: "/api/searches",
+      dataType: "json",
+      data: {query: query},
+      success: function (results) {
+        SearchResultActions.receiveResults(results);
+        console.log("Search sent");
+        
+      },
+      error: function () {
+        console.log("ApiUtil#search error!");
+      }
+
     });
   }
 
