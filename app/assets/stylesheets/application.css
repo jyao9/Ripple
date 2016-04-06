@@ -108,6 +108,20 @@ img {
   background: #388F90;
 }
 
+.no-result {
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+.searching {
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
 .search-results > .project-index-item {
   transform: scale(0.7);
   margin: 0;
@@ -526,12 +540,13 @@ img {
   background: #E7F3ED;
   margin-bottom: 20px;
   cursor: pointer;
-  transition: background 0.8s ease;
+  transition: background 0.8s ease, transform 0.8s ease;
 }
 
 .reward-index-item:hover {
   background: #96D0B2;
-  transition: background 0.8s ease;
+  transform: scale(1.05);
+  transition: background 0.8s ease, transform 0.8s ease;
 }
 
 .reward-header {

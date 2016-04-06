@@ -154,7 +154,6 @@ var ApiUtil = {
       success: function (results) {
         SearchResultActions.receiveResults(results);
         console.log("Search sent");
-        
       },
       error: function () {
         console.log("ApiUtil#search error!");

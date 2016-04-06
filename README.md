@@ -16,7 +16,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] Create and view projects
 - [X] Create rewards for projects
 - [X] Fund/select rewards from projects
-- [ ] Search for projects by username or title
+- [X] Search for projects by username or title
 - [X] Click on project icon to see the details about that specific project
 
 ## Design Docs
@@ -94,11 +94,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] update project index page of that reward
 
 ### Phase 6: Search Bar and Picture Upload (1 day)
-- [ ] add real time search to projects index page
-- [ ] search through projects for specific words
-- [ ] projects index page will render matching projects
-- [ ] update project index component based on nav bar
-- [ ] add handleChange function to project index component
+- [X] add real time search to projects index page
+- [X] search through projects for specific words
+- [X] projects index page will render matching projects
+- [X] update project index component based on nav bar
+- [X] add handleChange function to project index component
 - [X] add feature to allow users to upload pictures to projects
 - [X] project index item and project detail display images
 

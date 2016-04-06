@@ -42,10 +42,10 @@ var SearchResults = React.createClass({
 
         allResults = userProjects.splice(0, 4);
       } else if (this.props.projects.length === 0) {
-        allResults = <div>No results found</div>;
+        allResults = <div className="no-result">No results found</div>;
       }
     } else {
-      allResults = <div>Searching...</div>
+      allResults = <div className="searching">Searching...</div>
     }
 
     return (
