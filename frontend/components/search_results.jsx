@@ -1,7 +1,7 @@
 var React = require("react");
 var SearchResultsStore = require("../stores/results.js");
 var ApiUtil = require('../util/api_util.js');
-
+var ProjectIndexItem = require('./projects/index_item.jsx');
 var SearchResults = React.createClass({
 
   getInitialState: function () {
@@ -20,16 +20,27 @@ var SearchResults = React.createClass({
     this.setState({isSearching: SearchResultsStore.isSearching()});
   },
 
-  resultLis: function () {
-    return <div>You found something!</div>;
-  },
-
   render: function () {
+    var userProjects = [];
+    this.props.projects.forEach(function (item) {
+      if (item._type === "Project") {
+        userProjects.push(
+          <ProjectIndexItem key={item.id} project={item} />
+        );
+      } else {
+        item.projects.forEach(function (project) {
+          userProjects.push(
+            <ProjectIndexItem key={project.id} project={project} />
+          )
+        });
+      }
+    });
+
     var allResults;
     if (this.state.isSearching) {
       if (this.props.projects.length !== 0) {
-      
-        allResults = this.resultLis();
+
+        allResults = userProjects.splice(0, 4);
       } else if (this.props.projects.length === 0) {
         allResults = <div>No results found</div>;
       }
@@ -38,8 +49,10 @@ var SearchResults = React.createClass({
     }
 
     return (
-      <ul>
+      <ul className="search-results group">
         { allResults }
+
+        {this.props.children}
       </ul>
     );
   }

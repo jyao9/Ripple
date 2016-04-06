@@ -83,6 +83,36 @@ img {
   font-size: 18px;
 }
 
+.header-list li {
+  float: left;
+}
+
+.mglass {
+  width: 20px;
+  margin-top: 31px;
+  margin-left: 15px;
+}
+
+.search-bar {
+  margin-top: 21px;
+  margin-left: 20px;
+  height: 35px;
+  line-height: 28px;
+  font-size: 16px;
+  border: 1px solid #fff;
+}
+
+.search-results {
+  position: relative;
+  border-top: 1px solid #ccc;
+  background: #388F90;
+}
+
+.search-results > .project-index-item {
+  transform: scale(0.7);
+  margin: 0;
+}
+
 .header-nav div {
   float: right;
   font-size: 24px;
@@ -133,6 +163,7 @@ img {
   display: block;
   font-size: 24px;
   color: #5581AD;
+  border-right: 1px solid #ccc;
   padding-top: 11px;
   padding-bottom: 12px;
   transition: background 0.8s ease;
@@ -360,13 +391,14 @@ img {
 .content-main img {
   display: block;
   width: 645px;
-  height: auto;
+  height: 450px;
   margin-bottom: 35px;
 }
 
 .content-sidebar {
   float: left;
   width: 200px;
+  margin-top: 55px;
 }
 
 .detail-bottom {

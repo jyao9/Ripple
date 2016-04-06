@@ -98,7 +98,10 @@ var NavBar = React.createClass({
               <Link to="projects/new">Start a project</Link>
             </li>
             <li>
-              <input type="text" onChange={ this.handleInputChange } />
+              <img className="mglass" src={window.glass} />
+            </li>
+            <li>
+              <input className="search-bar" type="text" onChange={ this.handleInputChange } />
             </li>
           </ul>
 
