@@ -102,15 +102,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [X] add feature to allow users to upload pictures to projects
 - [X] project index item and project detail display images
 
-### Phase 7: Allow Complex Styling in Projects (0.5 days)
-
-**objective:** Enable complex styling of projects.
-
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
-
-### Phase 8: Styling Cleanup and Seeding (1 day)
+### Phase 7: Styling Cleanup and Seeding (1 day)
 
 **objective:** Make the site feel more cohesive and awesome.
 

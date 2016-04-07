@@ -17,6 +17,7 @@ var SessionForm = require('./components/session/form.jsx');
 var SessionStore = require('./stores/session.js');
 var RewardsIndex = require('./components/rewards/index.jsx');
 var RewardForm = require('./components/rewards/form.jsx');
+var Footer = require('./components/footer.jsx');
 
 var App = React.createClass({
   render: function () {
@@ -24,6 +25,7 @@ var App = React.createClass({
       <div>
         <NavBar />
         {this.props.children}
+        <Footer />
       </div>
     );
   }

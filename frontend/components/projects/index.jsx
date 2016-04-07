@@ -29,9 +29,14 @@ var ProjectIndex = React.createClass({
     })
 
     return(
-      <ul className="project-list group">
-        {projects}
-      </ul>
+      <main className="homepage">
+        <img className="img-banner" src={window.homepage} />
+        <div className="welcome">Welcome to Ripple!</div>
+        <span className="banner">Take a dip. Make a splash.</span>
+        <ul className="project-list group">
+          {projects}
+        </ul>
+      </main>
     );
   }
 });

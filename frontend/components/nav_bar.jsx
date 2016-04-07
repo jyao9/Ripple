@@ -101,7 +101,12 @@ var NavBar = React.createClass({
               <img className="mglass" src={window.glass} />
             </li>
             <li>
-              <input className="search-bar" type="text" onChange={ this.handleInputChange } />
+              <input
+                className="search-bar"
+                placeholder="Search Projects"
+                type="text"
+                value={this.state.query}
+                onChange={ this.handleInputChange } />
             </li>
           </ul>
 

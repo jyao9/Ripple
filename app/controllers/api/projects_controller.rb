@@ -13,7 +13,6 @@ class Api::ProjectsController < ApplicationController
   end
 
   def create
-    debugger
     @project = Project.new(project_params)
     @project.author_id = current_user.id
     if @project.save
