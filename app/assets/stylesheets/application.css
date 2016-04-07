@@ -510,7 +510,7 @@ img {
 
 .delete {
   padding: 10px 20px;
-  margin-top: 37px;
+  margin-top: 23px;
   margin-left: 10px;
   background: #D54848;
   color: #fff;
@@ -523,6 +523,7 @@ img {
   width: 135px;
   border-radius: 8px;
   margin-left: 14px;
+  transition: background 0.8s ease;
 }
 
 .edit > a {
@@ -531,6 +532,11 @@ img {
   padding: 10px 0;
   color: #fff;
   margin-top: 20px;
+}
+
+.edit:hover {
+  background: #3A2075;
+  transition: background 0.8s ease;
 }
 
 .delete:hover {

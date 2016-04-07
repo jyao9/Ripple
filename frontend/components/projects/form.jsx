@@ -1,6 +1,7 @@
 var React = require('react');
 var ApiUtil = require('../../util/api_util.js');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var ProjectStore = require('../../stores/project.js');
 
 
 var ProjectForm = React.createClass ({
@@ -11,24 +12,51 @@ var ProjectForm = React.createClass ({
   mixins: [LinkedStateMixin],
 
   getInitialState: function () {
-    return({ title: "", category: null, blurb: "", duration: null, goal: null, imageFile: null, imageUrl: null });
+    var currentProject = ProjectStore.find(this.props.params.projectId);
+    if (currentProject) {
+      return({ title: currentProject.title, category: currentProject.category , blurb: currentProject.blurb, duration: currentProject.duration, goal: currentProject.goal, imageUrl: currentProject.image_url })
+    } else {
+      return({ title: "", category: null, blurb: "", duration: null, goal: null, imageFile: null, imageUrl: null });
+    }
+
+    this.imageAdded = false;
   },
 
-  createProject: function (e) {
+  handleSubmit: function (e) {
     e.preventDefault();
+    var currentProject = ProjectStore.find(this.props.params.projectId);
+
     var formData = new FormData();
     formData.append("project[title]", this.state.title);
     formData.append("project[category]", this.state.category);
     formData.append("project[blurb]", this.state.blurb);
     formData.append("project[duration]", this.state.duration);
     formData.append("project[goal]", this.state.goal);
-    formData.append("project[image]", this.state.imageFile);
 
-    ApiUtil.createProject(formData, function (projectId) {
+    if (this.imageAdded) {
+      formData.append("project[image]", this.state.imageFile);
+    }
+
+    if (currentProject) {
+      this.editProject(formData, currentProject);
+    } else {
+      this.createProject(formData);
+    }
+
+  },
+
+  createProject: function (project) {
+    ApiUtil.createProject(project, function (projectId) {
       this.context.router.push({pathname: "projects/new/rewards", query: {}, state: {projectId: projectId}});
     }.bind(this));
 
     this.setState({ title: null, category: null, blurb: null, duration: null, goal: null, imageFile: null, imageUrl: null});
+  },
+
+  editProject: function (project, currentProject) {
+    ApiUtil.editProject(project, currentProject.id, function (id) {
+      this.context.router.push("projects/" + id)
+    }.bind(this))
   },
 
   handleFileChange: function (e) {
@@ -41,12 +69,26 @@ var ProjectForm = React.createClass ({
     }.bind(this);
 
     reader.readAsDataURL(file);
+    this.imageAdded = true;
   },
 
+
   render: function () {
+    var header;
+    var buttonText;
+
+    var currentProject = ProjectStore.find(this.props.params.projectId);
+    if (currentProject) {
+      header = "Edit project"
+      buttonText = "Edit project"
+    } else {
+      header = "What are you going to create?"
+      buttonText = "Create Project"
+    }
+
     return(
-      <form className="new-project group" onSubmit={this.createProject}>
-        <div className="form-title"><h2>What are you going to create?</h2></div>
+      <form className="new-project group" onSubmit={this.handleSubmit}>
+        <div className="form-title"><h2>{header}</h2></div>
 
         <label>I want to start a
           <select className="category" valueLink={this.linkState("category")}>
@@ -104,7 +146,7 @@ var ProjectForm = React.createClass ({
           />
         </label>
 
-        <button>Create Project</button>
+        <button>{buttonText}</button>
         <br />
         {this.props.children}
       </form>

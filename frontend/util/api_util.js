@@ -81,16 +81,20 @@ var ApiUtil = {
     });
   },
 
-  // Must have a key of id in the project object for this to work
-  editProject: function (project) {
+  editProject: function (project, projectId, callback) {
     $.ajax({
       type: "PATCH",
-      url: "api/projects/" + project.id,
-      data: {project: project},
+      url: "api/projects/" + projectId,
+      processData: false,
+      contentType: false,
+      data: project,
       dataType: "json",
       success: function (project) {
-        console.log(project.title);
-        console.log(project.blurb);
+        console.log("Edit succeessful");
+        callback && callback(projectId);
+      },
+      error: function () {
+        console.log("Edit failed");
       }
     });
   },

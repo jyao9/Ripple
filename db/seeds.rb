@@ -36,7 +36,7 @@ project.save!
 Project.create!(
   title: "World's Best Mac and Cheese",
   category: "Food",
-  blurb: "I want to make the best mac and cheese in the world. I like cheese. I also like maccaroni. If I surpass my goal, I may even put in some bacon.",
+  blurb: "I want to make the best mac and cheese in the world. I like cheese. I also like macaroni. If I surpass my goal, I may even put in some bacon.",
   author_id: 2,
   duration: 30,
   goal: 50,

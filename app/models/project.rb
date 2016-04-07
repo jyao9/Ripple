@@ -7,9 +7,8 @@ class Project < ActiveRecord::Base
   PgSearch.multisearch_options = {
     :using => {:tsearch => {:prefix => true}},
   }
-  
-  multisearchable :against => [:title],
-                  :using => {:tsearch => {:prefix => true}}
+
+  multisearchable :against => [:title]
 
   belongs_to(
     :author,
