@@ -504,6 +504,21 @@ img {
   display: block;
 }
 
+.delete {
+  padding: 10px 20px;
+  margin-top: 37px;
+  margin-left: 10px;
+  background: #D54848;
+  color: #fff;
+  border-radius: 10px;
+  transition: background 0.8s ease;
+}
+
+.delete:hover {
+  background: #B82F2F;
+  transition: background 0.8s ease;
+}
+
 .new-user {
   width: 800px;
   margin: 0 auto;
@@ -700,7 +715,7 @@ img {
   width: 160px;
   padding: 20px;
   margin-top: 80px;
-  margin-left: 265px;
+  margin-left: 269px;
   border-radius: 10px;
 }
 

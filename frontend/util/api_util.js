@@ -95,6 +95,19 @@ var ApiUtil = {
     });
   },
 
+  deleteProject: function (project, callback) {
+    $.ajax({
+      type: "DELETE",
+      url: "api/projects/" + project.id,
+      dataType: "json",
+      success: function (project) {
+        alert("Project deleted");
+        console.log("Project deleted");
+        callback && callback();
+      }
+    });
+  },
+
   login: function(credentials, callback) {
     $.ajax({
       type: "POST",

@@ -1,11 +1,19 @@
 var React = require('react');
 var ApiUtil = require('../../util/api_util.js');
 var ProjectStore = require('../../stores/project.js');
+var SessionStore = require('../../stores/session.js');
 var Link = require('react-router').Link;
 
 var ProjectDetail = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   getStateFromStore: function () {
-    return({ project: ProjectStore.find(parseInt(this.props.params.projectId)) });
+    return({
+      project: ProjectStore.find(parseInt(this.props.params.projectId)),
+      currentUser: SessionStore.currentUser()
+    });
   },
 
   getInitialState: function () {
@@ -29,9 +37,23 @@ var ProjectDetail = React.createClass({
     this.detailListener.remove();
   },
 
+  deleteProject: function (e) {
+    e.preventDefault();
+    ApiUtil.deleteProject(this.state.project, function () {
+      this.context.router.push("/");
+    }.bind(this));
+  },
+
   render: function () {
+
     if (this.state.project === undefined) {
       return <div></div>;
+    }
+
+    var projectOptions;
+
+    if (this.state.project.author_id === this.state.currentUser.id) {
+      projectOptions = <button className="delete" onClick={this.deleteProject}>Delete Project</button>
     }
 
     var today = Date.now();
@@ -74,7 +96,8 @@ var ProjectDetail = React.createClass({
             </div>
 
             <div className="view-rewards"><Link to={rewardLink}>Back this project</Link></div>
-          </div>
+            {projectOptions}
+        </div>
         </div>
 
         <div className="detail-bottom group">
