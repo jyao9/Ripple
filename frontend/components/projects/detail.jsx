@@ -52,8 +52,17 @@ var ProjectDetail = React.createClass({
 
     var projectOptions;
 
+    var editLink = "projects/" + this.state.project.id + "/edit"
+
     if (this.state.project.author_id === this.state.currentUser.id) {
-      projectOptions = <button className="delete" onClick={this.deleteProject}>Delete Project</button>
+      projectOptions = <div>
+        <button className="delete" onClick={this.deleteProject}>
+          Delete Project
+        </button>
+        <div className="edit">
+          <Link to={editLink}>Edit Project</Link>
+        </div>
+      </div>
     }
 
     var today = Date.now();
@@ -105,7 +114,7 @@ var ProjectDetail = React.createClass({
             Comments:
           </div>
 
-          <div className="content-sidebar">
+          <div className="content-sidebar bottom">
             Rewards
           </div>
         </div>
