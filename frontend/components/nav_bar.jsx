@@ -72,7 +72,11 @@ var NavBar = React.createClass({
 
     if (this.state.currentUser) {
       button = <button className="logout" onClick={this.handleClick}>Logout</button>
-      user = <div className="user">{this.state.currentUser.username}</div>;
+      user = <div className="user" >
+          <Link to="user/account">
+            {this.state.currentUser.username}
+          </Link>
+        </div>;
     } else {
       sessionLinks = <div className="user-info group">
         <div><Link to="users/new">Sign Up</Link></div>

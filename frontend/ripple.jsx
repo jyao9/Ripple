@@ -12,6 +12,7 @@ var ProjectIndex = require('./components/projects/index.jsx');
 var NavBar = require('./components/nav_bar.jsx');
 var ProjectForm = require('./components/projects/form.jsx');
 var ProjectDetail = require('./components/projects/detail.jsx');
+var UserDetail = require('./components/users/detail.jsx');
 var UserForm = require('./components/users/form.jsx');
 var SessionForm = require('./components/session/form.jsx');
 var SessionStore = require('./stores/session.js');
@@ -39,6 +40,7 @@ var routes = (
       <Route path="rewards" component={RewardForm} />
     </Route>
     <Route path="users/new" component={UserForm} />
+    <Route path="user/account" component={UserDetail} ></Route>
     <Route path="login" component={SessionForm} />
     <Route path="projects/:projectId">
       <IndexRoute component={ProjectDetail} />

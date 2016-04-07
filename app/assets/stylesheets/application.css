@@ -142,7 +142,9 @@ img {
 
 .search-results > .project-index-item {
   transform: scale(0.7);
-  margin: 0;
+  margin-top: -40px;
+  margin-bottom: -40px;
+  margin-right: -85px;
 }
 
 .header-nav div {
@@ -791,6 +793,12 @@ img {
   left: 220px;
   font-family: sans-serif;
   font-weight: bold;
+  transition: background 0.8s ease;
+}
+
+.enter:hover {
+  background: #4A9242;
+  transition: background 0.8s ease;
 }
 
 .logout {
@@ -802,6 +810,20 @@ img {
 }
 
 .logout:hover {
+  transition: background 0.8s ease, color 0.8s ease;
+  background: #E0EAF5;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.user a {
+  margin-top: -28px;
+  margin-left: -15px;
+  padding: 28px 20px 25px 20px;
+  transition: background 0.8s ease;
+}
+
+.user a:hover {
   transition: background 0.8s ease, color 0.8s ease;
   background: #E0EAF5;
   color: #aaa;
@@ -846,4 +868,37 @@ img {
   line-height: 100px;
   margin-left: 50px;
   font-size: 24px;
+}
+
+.user-page {
+  padding: 50px;
+}
+
+.user-span {
+  font-size: 24px;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.user-projects {
+  margin-top: -20px;
+}
+
+.user-projects > .project-index-item {
+  transform: scale(0.7);
+  margin: 0;
+  margin-top: -50px;
+  margin-left: -30px;
+  margin-right: -60px;
+  margin-bottom: -40px;
+}
+
+
+.created-projects {
+  display: block;
+}
+
+.backed-projects {
+  display: block;
 }

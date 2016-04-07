@@ -12,7 +12,7 @@ var ProjectForm = React.createClass ({
   mixins: [LinkedStateMixin],
 
   getInitialState: function () {
-    var currentProject = ProjectStore.find(this.props.params.projectId);
+    var currentProject = ProjectStore.find(parseInt(this.props.params.projectId));
     if (currentProject) {
       return({ title: currentProject.title, category: currentProject.category , blurb: currentProject.blurb, duration: currentProject.duration, goal: currentProject.goal, imageUrl: currentProject.image_url })
     } else {
@@ -24,7 +24,7 @@ var ProjectForm = React.createClass ({
 
   handleSubmit: function (e) {
     e.preventDefault();
-    var currentProject = ProjectStore.find(this.props.params.projectId);
+    var currentProject = ProjectStore.find(parseInt(this.props.params.projectId));
 
     var formData = new FormData();
     formData.append("project[title]", this.state.title);
@@ -77,7 +77,7 @@ var ProjectForm = React.createClass ({
     var header;
     var buttonText;
 
-    var currentProject = ProjectStore.find(this.props.params.projectId);
+    var currentProject = ProjectStore.find(parseInt(this.props.params.projectId));
     if (currentProject) {
       header = "Edit project"
       buttonText = "Edit project"

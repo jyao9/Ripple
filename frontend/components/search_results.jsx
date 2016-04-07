@@ -2,8 +2,8 @@ var React = require("react");
 var SearchResultsStore = require("../stores/results.js");
 var ApiUtil = require('../util/api_util.js');
 var ProjectIndexItem = require('./projects/index_item.jsx');
-var SearchResults = React.createClass({
 
+var SearchResults = React.createClass({
   getInitialState: function () {
     return({ isSearching: false });
   },
@@ -40,7 +40,7 @@ var SearchResults = React.createClass({
     if (this.state.isSearching) {
       if (this.props.projects.length !== 0) {
 
-        allResults = userProjects.splice(0, 4);
+        allResults = userProjects.splice(0, 5);
       } else if (this.props.projects.length === 0) {
         allResults = <div className="no-result">No results found</div>;
       }

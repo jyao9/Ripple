@@ -107,7 +107,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **objective:** Make the site feel more cohesive and awesome.
 
 - [X] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
+- [X] Refactor HTML classes & CSS rules
 - [X] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
@@ -115,7 +115,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Create account page for user showing projects they have backed
 - [ ] Add category index items to project index page
   - [ ] Category index items render projects with that category
-- [ ] Allow users to edit their projects
+- [X] Allow users to edit their projects
 - [X] See how much projects have been funded thus far via project icon
 
 
