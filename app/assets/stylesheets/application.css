@@ -226,7 +226,6 @@ img {
   display: block;
   font-size: 24px;
   color: #5581AD;
-  border-right: 1px solid #ccc;
   padding-top: 11px;
   padding-bottom: 12px;
   transition: background 0.8s ease;
@@ -236,6 +235,10 @@ img {
   transition: background 0.8s ease;
   background: #E0EAF5;
   cursor: pointer;
+}
+
+.header-category {
+  border-right: 1px solid #ccc;
 }
 
 .project-index-item {
@@ -901,4 +904,22 @@ img {
 
 .backed-projects {
   display: block;
+}
+
+.categories {
+  width: 1120px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.category-type {
+  float: left;
+  width: 100px;
+  padding: 30px 10px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 50px;
+  text-transform: capitalize;
 }

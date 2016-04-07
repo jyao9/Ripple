@@ -8,3 +8,4 @@ json.num_of_backers project.backers.count
 json.image_url asset_path(project.image.url(:original))
 
 json.status project.status
+json.categories Project::CATEGORIES

@@ -101,6 +101,9 @@ var NavBar = React.createClass({
             <li className="project-list-item">
               <Link to="projects/new">Start a project</Link>
             </li>
+            <li className="project-list-item header-category">
+              <Link to="categories">Discover</Link>
+            </li>
             <li>
               <img className="mglass" src={window.glass} />
             </li>
