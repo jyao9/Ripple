@@ -8,6 +8,11 @@ json.num_of_backers project.backers.count
 json.image_url asset_path(project.image.url(:original))
 
 json.status project.status
+
+categories_list = Project.all.pluck(:category)
+
+json.art categoriest_list.count("Art")
+
 json.categories Project::CATEGORIES
 
 json.art Project.by_category("Art")
@@ -25,3 +30,5 @@ json.photography Project.by_category("Photography")
 json.publishing Project.by_category("Publishing")
 json.technology Project.by_category("Technology")
 json.theater Project.by_category("Theater")
+
+# Project.all.pluck(:category)

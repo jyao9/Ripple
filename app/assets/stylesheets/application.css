@@ -923,12 +923,16 @@ img {
   border-radius: 5px;
   margin: 30px;
   overflow: hidden;
+  transition: background 0.8s ease;
 }
 
 .category-type:hover {
   cursor: pointer;
+  background: #7ED7EA;
+  transition: background 0.8s ease;
 }
 
 .filter {
   height: 600px;
+  padding: 0 190px;
 }

@@ -112,7 +112,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ### Bonus Features (TBD)
 - [ ] Users can comment on projects they have funded
-- [ ] Create account page for user showing projects they have backed
+- [X] Create account page for user showing projects they have backed
 - [ ] Add category index items to project index page
   - [ ] Category index items render projects with that category
 - [X] Allow users to edit their projects

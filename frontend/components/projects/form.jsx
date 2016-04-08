@@ -93,21 +93,21 @@ var ProjectForm = React.createClass ({
         <label>I want to start a
           <select className="category" valueLink={this.linkState("category")}>
             <option value=""></option>
-            <option value="art">Art</option>
-            <option value="comics">Comics</option>
-            <option value="crafts">Crafts</option>
-            <option value="dance">Dance</option>
-            <option value="design">Design</option>
-            <option value="fashion">Fashion</option>
-            <option value="film">Film & Video</option>
-            <option value="food">Food</option>
-            <option value="games">Games</option>
-            <option value="journalism">Journalism</option>
-            <option value="music">Music</option>
-            <option value="photography">Photography</option>
-            <option value="publishing">Publishing</option>
-            <option value="technology">Technology</option>
-            <option value="theater">Theater</option>
+            <option value="Art">Art</option>
+            <option value="Comics">Comics</option>
+            <option value="Crafts">Crafts</option>
+            <option value="Dance">Dance</option>
+            <option value="Design">Design</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Film">Film & Video</option>
+            <option value="Food">Food</option>
+            <option value="Games">Games</option>
+            <option value="Journalism">Journalism</option>
+            <option value="Music">Music</option>
+            <option value="Photography">Photography</option>
+            <option value="Publishing">Publishing</option>
+            <option value="Technology">Technology</option>
+            <option value="Theater">Theater</option>
           </select> project.
         </label>
 
