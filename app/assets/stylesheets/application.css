@@ -928,3 +928,7 @@ img {
 .category-type:hover {
   cursor: pointer;
 }
+
+.filter {
+  height: 600px;
+}

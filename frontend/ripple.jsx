@@ -41,9 +41,8 @@ var routes = (
       <IndexRoute component={ProjectForm} />
       <Route path="rewards" component={RewardForm} />
     </Route>
-    <Route path="categories" component={ProjectCategories}>
-      <Route path=":categoryName" component={ProjectCategoriesIndex} />
-    </Route>
+    <Route path="categories" component={ProjectCategories} />
+    <Route path="filtered" component={ProjectCategoriesIndex} />
     <Route path="users/new" component={UserForm} />
     <Route path="user/account" component={UserDetail} />
     <Route path="login" component={SessionForm} />

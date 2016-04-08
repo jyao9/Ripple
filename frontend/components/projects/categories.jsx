@@ -24,8 +24,13 @@ var ProjectCategories = React.createClass({
     this.setState({ projects: ProjectStore.all() });
   },
 
-  handleClick: function (category) {
-
+  handleClick: function (e) {
+    var category = $(e.target).text().toLowerCase();
+    this.context.router.push({
+      pathname: "filtered",
+      query: {},
+      state: {projects: this.state.projects[0][category]}
+    });
   },
 
   render: function () {
@@ -40,8 +45,8 @@ var ProjectCategories = React.createClass({
       var projects = this.state.projects[0][method];
       id++;
       return(
-        <ul key={id} className="category-type" projects={projects}>
-          <li>{category}</li>
+        <ul key={id} className="category-type">
+          <li onClick={this.handleClick}>{category}</li>
           <li>{projects.length}</li>
         </ul>
       )

@@ -3,12 +3,13 @@ var ProjectIndexItem = require('./index_item.jsx');
 
 var ProjectCategoriesIndex = React.createClass({
   render: function () {
-    var projects = this.props.projects.map(function (project) {
+    var projects = this.props.location.state.projects.map(function (project) {
       return(<ProjectIndexItem key={project.id} project={project} />);
     })
 
     return(
-      <div>
+      <div className="filter group">
+
         {projects}
       </div>
     );
