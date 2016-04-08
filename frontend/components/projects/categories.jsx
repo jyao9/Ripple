@@ -3,6 +3,10 @@ var ApiUtil = require('../../util/api_util.js');
 var ProjectStore = require('../../stores/project.js');
 
 var ProjectCategories = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   getInitialState: function () {
     return({ projects: ProjectStore.all() });
   },
@@ -20,20 +24,34 @@ var ProjectCategories = React.createClass({
     this.setState({ projects: ProjectStore.all() });
   },
 
+  handleClick: function (category) {
+
+  },
+
   render: function () {
     if (this.state.projects === undefined || this.state.projects.length === 0) {
       return <div>Loading...</div>;
     }
 
+    var id = 0;
 
     var categories = this.state.projects[0].categories.map(function (category){
-      return <li className="category-type">{category}</li>;
-    });
+      var method = category.toLowerCase();
+      var projects = this.state.projects[0][method];
+      id++;
+      return(
+        <ul key={id} className="category-type" projects={projects}>
+          <li>{category}</li>
+          <li>{projects.length}</li>
+        </ul>
+      )
+    }.bind(this));
 
     return(
-      <ul className="categories group">
+      <div className="categories group">
         {categories}
-      </ul>
+        {this.props.children}
+      </div>
     );
   }
 });

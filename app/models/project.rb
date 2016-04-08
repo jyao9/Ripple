@@ -4,21 +4,21 @@ class Project < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   CATEGORIES = [
-    "art",
-    "comics",
-    "crafts",
-    "dance",
-    "design",
-    "fashion",
-    "film",
-    "food",
-    "games",
-    "journalism",
-    "music",
-    "photography",
-    "publishing",
-    "technology",
-    "theater"
+    "Art",
+    "Comics",
+    "Crafts",
+    "Dance",
+    "Design",
+    "Fashion",
+    "Film",
+    "Food",
+    "Games",
+    "Journalism",
+    "Music",
+    "Photography",
+    "Publishing",
+    "Technology",
+    "Theater"
   ]
 
   include PgSearch
@@ -58,6 +58,10 @@ class Project < ActiveRecord::Base
     sql_sum = self.backings.select("SUM(rewards.value) AS status")
     return 0 if sql_sum[0].status == nil
     return sql_sum[0].status
+  end
+
+  def self.by_category(category)
+    self.where("projects.category = ?", category)
   end
 
 end
