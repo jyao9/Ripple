@@ -9,8 +9,6 @@ json.image_url asset_path(project.image.url(:original))
 
 json.status project.status
 
-
-
 json.categories Project::CATEGORIES
 
 categories_list = Project.all.pluck(:category)
@@ -30,5 +28,3 @@ json.photography categories_list.count("Photography")
 json.publishing categories_list.count("Publishing")
 json.technology categories_list.count("Technology")
 json.theater categories_list.count("Theater")
-
-# Project.all.pluck(:category)
