@@ -38,6 +38,7 @@ var ProjectCategories = React.createClass({
       return <div>Loading...</div>;
     }
 
+    
     var id = 0;
 
     var categories = this.state.projects[0].categories.map(function (category){
@@ -47,7 +48,7 @@ var ProjectCategories = React.createClass({
       return(
         <ul key={id} className="category-type">
           <li onClick={this.handleClick}>{category}</li>
-          <li>{projects.length}</li>
+          <li>{projects}</li>
         </ul>
       )
     }.bind(this));

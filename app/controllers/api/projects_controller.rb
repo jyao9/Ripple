@@ -24,7 +24,7 @@ class Api::ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    
+
     if @project.update_attributes(project_params)
       render :show
     else
@@ -36,6 +36,12 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     render :show
+  end
+
+  # Work on this next!!!
+  def projects_by_category
+    @projects = Project.all.where("projects.category = ?", params[:category])
+    render :category
   end
 
   private
