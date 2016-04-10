@@ -670,6 +670,7 @@ img {
   width: 700px;
   margin: 0 auto;
   margin-top: 50px;
+  margin-bottom: 100px;
   background: #fff;
   border: 1px solid #4C5D69;
   border-radius: 5px;
@@ -923,12 +924,16 @@ img {
   border-radius: 5px;
   margin: 30px;
   overflow: hidden;
+  transition: background 0.8s ease;
 }
 
 .category-type:hover {
   cursor: pointer;
+  background: #7ED7EA;
+  transition: background 0.8s ease;
 }
 
 .filter {
   height: 600px;
+  padding: 0 190px;
 }
