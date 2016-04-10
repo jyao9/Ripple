@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body, header, nav, h1, h3, ul, li, div, a, img, button, main, footer {
+body, html, header, nav, h1, h3, ul, li, div, a, img, button, main, footer {
   margin: 0;
   padding: 0;
   border: 0;
@@ -27,9 +27,17 @@ body, header, nav, h1, h3, ul, li, div, a, img, button, main, footer {
   color: inherit;
 }
 
+html {
+  min-width: 100%;
+  min-height: 100%;
+
+}
+
 body {
   background: #ECF7F8;
   font-family: Helvetica;
+  height: 1054px;
+  position: relative;
 }
 
 ul {
@@ -205,7 +213,7 @@ img {
 .welcome {
   position: absolute;
   top: 135px;
-  left: 500px;
+  left: 35%;
   text-shadow: 1px 1px 1px #000;
   color: #133C5A;
   font-size: 48px;
@@ -215,7 +223,7 @@ img {
 .banner {
   position: absolute;
   top: 400px;
-  left: 495px;
+  left: 35%;
   color: #fff;
   font-size: 40px;
   text-shadow: 1px 1px 1px #000;
@@ -674,7 +682,7 @@ img {
   background: #fff;
   border: 1px solid #4C5D69;
   border-radius: 5px;
-  padding: 50px;
+  padding: 50px 50px 300px 50px;
 }
 
 .new-reward-form-title {
@@ -936,4 +944,8 @@ img {
 .filter {
   height: 600px;
   padding: 0 190px;
+}
+
+.main-page {
+  padding-bottom: 300px;
 }

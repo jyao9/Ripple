@@ -47,7 +47,7 @@ var ProjectCategories = React.createClass({
       return(
         <ul key={id} className="category-type">
           <li onClick={this.handleClick}>{category}</li>
-          <li>{projects.length}</li>
+          <li>{projects}</li>
         </ul>
       )
     }.bind(this));

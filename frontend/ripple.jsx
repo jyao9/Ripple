@@ -25,9 +25,10 @@ var Footer = require('./components/footer.jsx');
 var App = React.createClass({
   render: function () {
     return(
-      <div>
+      <div className="group">
         <NavBar />
         {this.props.children}
+        <div className="main-page"></div>
         <Footer />
       </div>
     );
