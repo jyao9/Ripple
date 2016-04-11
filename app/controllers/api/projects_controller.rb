@@ -5,7 +5,7 @@ class Api::ProjectsController < ApplicationController
   def index
     if params[:category] != nil
       @projects = Project.all.where("projects.category = ?", params[:category])
-      render :category
+      render :index
     else
       @projects = Project.all
       render :index

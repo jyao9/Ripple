@@ -179,11 +179,7 @@ var ApiUtil = {
       data: {category: category},
       success: function (projects) {
         ProjectActions.receiveSelectProjects(projects);
-        console.log("category sent");
         callback && callback();
-      },
-      error: function () {
-        console.log("category fail");
       }
     });
   }
