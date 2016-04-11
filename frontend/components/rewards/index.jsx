@@ -11,6 +11,7 @@ var RewardsIndex = React.createClass({
   componentDidMount: function () {
     this.rewardListener = RewardStore.addListener(this._onChange);
     ApiUtil.fetchAllRewards(this.props.params.projectId);
+    this.forceUpdate();
   },
 
   componentWillUnmount: function () {
@@ -22,6 +23,7 @@ var RewardsIndex = React.createClass({
   },
 
   render: function () {
+
     var header;
 
     if (this.state.rewards[0] === undefined) {

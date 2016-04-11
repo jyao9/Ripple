@@ -15,7 +15,7 @@ var UserDetail = React.createClass({
     });
 
     var backedProjects = this.state.currentUser.backed_projects.map(function (project) {
-      return(<ProjectIndexItem key={project.id} project={project} />)
+      return(<ProjectIndexItem key={project.title} project={project} />)
     });
 
     return(

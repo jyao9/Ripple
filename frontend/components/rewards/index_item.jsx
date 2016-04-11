@@ -1,6 +1,7 @@
 var React = require('react');
 var ApiUtil = require('../../util/api_util.js');
 var Modal = require('react-modal');
+var SessionStore = require('../../stores/session.js');
 
 var customStyles = {
   overlay: {
@@ -28,8 +29,23 @@ var RewardIndexItem = React.createClass({
     router: React.PropTypes.object.isRequired
   },
 
-  getInitialState: function() {
-    return { modalIsOpen: false };
+  getInitialState: function () {
+    return { modalIsOpen: false, currentUser: null };
+  },
+
+  componentDidMount: function () {
+    this.sessionStoreToken = SessionStore.addListener(this.handleSessionChange);
+    this.handleSessionChange();
+  },
+
+  componentWillUnmount: function() {
+    this.sessionStoreToken.remove();
+  },
+
+  handleSessionChange: function() {
+    if (SessionStore.isLoggedIn()) {
+      this.setState({ currentUser: SessionStore.currentUser() });
+    }
   },
 
   openModal: function() {
@@ -44,11 +60,24 @@ var RewardIndexItem = React.createClass({
   handleClick: function (e) {
     e.preventDefault();
 
-    ApiUtil.createBacking(
-      { reward_id: this.props.reward.id },
-      this.props.reward.project_id,
-      this.presentMessage()
-    );
+    var backers = this.props.reward.backers;
+    var isBacker = false;
+    for (var i = 0; i < backers.length; i++) {
+      if (backers[i].id === this.state.currentUser.id) {
+        isBacker = true;
+      };
+    };
+
+    if (isBacker) {
+      alert("You have already backed this project and cannot donate again.");
+      this.context.router.push("projects/" + this.props.reward.project_id);
+    } else {
+      ApiUtil.createBacking(
+        { reward_id: this.props.reward.id },
+        this.props.reward.project_id,
+        this.presentMessage()
+      );
+    }
   },
 
   presentMessage: function () {
