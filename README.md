@@ -6,7 +6,7 @@ View the website at: [ripplestarter.herokuapp.com][heroku]
 [heroku]: www.ripplestarter.herokuapp.com
 
 ## Home View:
-![Homepage](/app/assets/images/homepage.jpg?raw=true)
+![Homepage](assets/images/homepage.jpg)
 
 ## Technical Details:
 * When someone donates to a project on Ripple, that project will update based on the amount of money that person has donated. In order for the project to update properly, a separate backings table was needed to keep track of how many backings there were per reward and then sum up those backings to obtain the total amount donated to that project. Therefore, when a reward is selected by the current user, an ajax request is sent to the server to create a backing.
