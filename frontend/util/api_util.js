@@ -74,9 +74,6 @@ var ApiUtil = {
       dataType: "json",
       success: function (backing) {
         callback && callback();
-      },
-      error: function () {
-        console.log("Backing creation failed");
       }
     });
   },
@@ -90,7 +87,6 @@ var ApiUtil = {
       data: project,
       dataType: "json",
       success: function (project) {
-        console.log("Edit succeessful");
         callback && callback(projectId);
       },
       error: function () {
@@ -106,7 +102,6 @@ var ApiUtil = {
       dataType: "json",
       success: function (project) {
         alert("Project deleted");
-        console.log("Project deleted");
         callback && callback();
       }
     });
@@ -172,12 +167,7 @@ var ApiUtil = {
       data: {query: query},
       success: function (results) {
         SearchResultActions.receiveResults(results);
-        console.log("Search sent");
-      },
-      error: function () {
-        console.log("ApiUtil#search error!");
       }
-
     });
   }
 
