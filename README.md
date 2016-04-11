@@ -3,7 +3,7 @@
 Ripple is a KickStarter clone that allows users to create projects and to donate to currently existing projects. It was built using Ruby on Rails and React.js.
 
 View the website at: [ripplestarter.herokuapp.com][heroku]
-[heroku]: www.ripplestarter.herokuapp.com
+[heroku]: http://ripplestarter.herokuapp.com
 
 ## Home View:
 ![Homepage](https://github.com/jyao9/Ripple/blob/master/app/assets/images/hompage.jpg)
