@@ -1,6 +1,6 @@
 # Ripple
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Explore Ripple][heroku]
 
 [heroku]: ripplestarter.herokuapp.com
 
