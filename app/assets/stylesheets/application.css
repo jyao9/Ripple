@@ -218,15 +218,17 @@ img {
   color: #133C5A;
   font-size: 48px;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .banner {
   position: absolute;
   top: 400px;
-  left: 35%;
+  left: 34%;
   color: #fff;
   font-size: 40px;
   text-shadow: 1px 1px 1px #000;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .project-list-item {
