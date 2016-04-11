@@ -9,6 +9,10 @@ var UserDetail = React.createClass({
     return({ currentUser: SessionStore.currentUser() });
   },
 
+  componentDidMount: function () {
+    this.forceUpdate();
+  },
+
   render: function () {
     var createdProjects = this.state.currentUser.projects.map(function (project) {
       return(<ProjectIndexItem key={project.id} project={project} />)

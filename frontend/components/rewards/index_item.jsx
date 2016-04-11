@@ -67,7 +67,7 @@ var RewardIndexItem = React.createClass({
         isBacker = true;
       };
     };
-
+    
     if (isBacker) {
       alert("You have already backed this project and cannot donate again.");
       this.context.router.push("projects/" + this.props.reward.project_id);
