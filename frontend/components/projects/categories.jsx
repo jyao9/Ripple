@@ -25,11 +25,12 @@ var ProjectCategories = React.createClass({
   },
 
   handleClick: function (e) {
-    var category = $(e.target).text().toLowerCase();
+    var category = $(e.target).text();
+
     this.context.router.push({
       pathname: "filtered",
       query: {},
-      state: {projects: this.state.projects[0][category]}
+      state: {category: category}
     });
   },
 
@@ -38,7 +39,7 @@ var ProjectCategories = React.createClass({
       return <div>Loading...</div>;
     }
 
-    
+
     var id = 0;
 
     var categories = this.state.projects[0].categories.map(function (category){
@@ -48,7 +49,7 @@ var ProjectCategories = React.createClass({
       return(
         <ul key={id} className="category-type">
           <li onClick={this.handleClick}>{category}</li>
-          <li>{projects}</li>
+          <li>{projects} projects</li>
         </ul>
       )
     }.bind(this));

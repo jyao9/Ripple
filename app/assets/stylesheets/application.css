@@ -937,3 +937,8 @@ img {
   height: 600px;
   padding: 0 190px;
 }
+
+.category-header {
+  font-size: 30px;
+  margin-top: 25px;
+}

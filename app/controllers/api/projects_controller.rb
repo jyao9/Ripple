@@ -3,8 +3,13 @@ class Api::ProjectsController < ApplicationController
   before_action :require_signed_in, only: [:create, :update]
 
   def index
-    @projects = Project.all
-    render :index
+    if params[:category] != nil
+      @projects = Project.all.where("projects.category = ?", params[:category])
+      render :category
+    else
+      @projects = Project.all
+      render :index
+    end
   end
 
   def show
@@ -38,11 +43,6 @@ class Api::ProjectsController < ApplicationController
     render :show
   end
 
-  # Work on this next!!!
-  def projects_by_category
-    @projects = Project.all.where("projects.category = ?", params[:category])
-    render :category
-  end
 
   private
 
