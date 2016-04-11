@@ -112,16 +112,6 @@ var ProjectDetail = React.createClass({
         </div>
         </div>
 
-        <div className="detail-bottom group">
-          <div className="content-main">
-            Comments:
-          </div>
-
-          <div className="content-sidebar bottom">
-            Rewards
-          </div>
-        </div>
-
         {this.props.children}
       </section>
     );
