@@ -3,8 +3,13 @@ class Api::ProjectsController < ApplicationController
   before_action :require_signed_in, only: [:create, :update]
 
   def index
-    @projects = Project.all
-    render :index
+    if params[:category] != nil
+      @projects = Project.all.where("projects.category = ?", params[:category])
+      render :category
+    else
+      @projects = Project.all
+      render :index
+    end
   end
 
   def show
@@ -24,7 +29,7 @@ class Api::ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    
+
     if @project.update_attributes(project_params)
       render :show
     else
@@ -37,6 +42,7 @@ class Api::ProjectsController < ApplicationController
     @project.destroy
     render :show
   end
+
 
   private
 

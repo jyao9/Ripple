@@ -169,6 +169,23 @@ var ApiUtil = {
         SearchResultActions.receiveResults(results);
       }
     });
+  },
+
+  fetchProjectByCategory: function (category, callback) {
+    $.ajax({
+      type: "GET",
+      url: "/api/projects",
+      dataType: "json",
+      data: {category: category},
+      success: function (projects) {
+        ProjectActions.receiveSelectProjects(projects);
+        console.log("category sent");
+        callback && callback();
+      },
+      error: function () {
+        console.log("category fail");
+      }
+    });
   }
 
 };

@@ -14,6 +14,13 @@ var ProjectActions = {
       actionType: ProjectConstants.PROJECT_RECEIVED,
       project: project
     });
+  },
+
+  receiveSelectProjects: function (projects) {
+    AppDispatcher.dispatch({
+      actionType: ProjectConstants.PROJECTS_RECEIVED,
+      projects: projects
+    });
   }
 };
 

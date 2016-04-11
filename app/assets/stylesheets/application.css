@@ -945,3 +945,8 @@ img {
 .main-page {
   padding-bottom: 300px;
 }
+
+.category-header {
+  font-size: 30px;
+  margin-top: 25px;
+}
