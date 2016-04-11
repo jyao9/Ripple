@@ -142,7 +142,9 @@ var ApiUtil = {
       url: "/api/session",
       dataType: "json",
       success: function(currentUser) {
-        SessionActions.currentUserReceived(currentUser);
+        if (Object.keys(currentUser).length > 0) {
+          SessionActions.currentUserReceived(currentUser);
+        }
       },
       complete: function() {
         completion && completion();

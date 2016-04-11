@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
       @user = current_user
       render "api/users/show"
     else
-      render json: { message: "Not logged in" }, status: 401
+      render json: {}, status: 200
     end
   end
 
