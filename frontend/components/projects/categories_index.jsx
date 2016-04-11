@@ -19,11 +19,6 @@ var ProjectCategoriesIndex = React.createClass({
   },
 
   render: function () {
-    var categoryHeader;
-
-    if (this.state.projects[0]) {
-      categoryHeader = this.state.projects[0].category;
-    }
 
     var projects = this.state.projects.map(function (project) {
       return(<ProjectIndexItem key={project.id} project={project} />);
@@ -31,7 +26,7 @@ var ProjectCategoriesIndex = React.createClass({
 
     return(
       <div className="filter group">
-        <div className="category-header">Sorted by: {categoryHeader}</div>
+        <div className="category-header">Sorted by: {this.props.location.state.category}</div>
         {projects}
       </div>
     );
