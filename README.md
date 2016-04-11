@@ -14,6 +14,7 @@ View the website at: [ripplestarter.herokuapp.com][heroku]
 ## Technical Details:
 * When someone donates to a project on Ripple, that project will update based on the amount of money that person has donated. In order for the project to update properly, a separate backings table was needed to keep track of how many backings there were per reward and then sum up those backings to obtain the total amount donated to that project. Therefore, when a reward is selected by the current user, an ajax request is sent to the server to create a backing.
 
+```javascript
 createBacking: function (backing, project_id, callback) {
   $.ajax({
     type: "POST",
@@ -27,9 +28,11 @@ createBacking: function (backing, project_id, callback) {
       console.log("Backing creation failed");
     }
   });
+  ```
 
 * To update to project itself, a status method was created in the projects controller to sum up all the rewards that have been backed.
 
+```ruby
 has_many(
   :rewards,
   class_name: "Reward",
@@ -48,6 +51,7 @@ def status
   return 0 if sql_sum[0].status == nil
   return sql_sum[0].status
 end
+```
 
 ## Features
 
@@ -62,4 +66,4 @@ end
 * Project icons on home page show percentage of goal achieved
 
 [Original Design Docs][original]
-[original]: ./docs/wakthrough.md
+[original]: https://github.com/jyao9/Ripple/blob/master/docs/walkthrough.md
