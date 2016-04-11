@@ -10,10 +10,13 @@ var UserDetail = React.createClass({
   },
 
   componentDidMount: function () {
-    this.forceUpdate();
+    ApiUtil.fetchCurrentUser(function () {
+      this.setState({ currentUser: SessionStore.currentUser() });
+    }.bind(this));
   },
 
   render: function () {
+
     var createdProjects = this.state.currentUser.projects.map(function (project) {
       return(<ProjectIndexItem key={project.id} project={project} />)
     });

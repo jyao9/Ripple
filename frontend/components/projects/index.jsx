@@ -11,6 +11,7 @@ var ProjectIndex = React.createClass({
   componentDidMount: function () {
     this.projectListener = ProjectStore.addListener(this._onChange);
     ApiUtil.fetchAllProjects();
+    this.forceUpdate();
   },
 
   componentWillUnmount: function () {
