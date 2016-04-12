@@ -61,6 +61,7 @@ end
 * Create rewards for projects
 * Fund/select rewards from projects
 * Search for projects by author or title
+* Filter projects by category
 * Click on project icon to see the details about that specific project
 * See projects current user has created and backed
 * Project icons on home page show percentage of goal achieved

@@ -916,12 +916,14 @@ img {
   width: 1120px;
   margin: 0 auto;
   padding: 50px 0;
+  overflow: hidden;
 }
 
 .category-type {
   float: left;
+  position: relative;
   width: 100px;
-  padding: 40px 30px;
+  padding: 50px 30px;
   text-align: center;
   background: #fff;
   border: 1px solid #000;
@@ -935,6 +937,19 @@ img {
   cursor: pointer;
   background: #7ED7EA;
   transition: background 0.8s ease;
+}
+
+.category {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 108px;
+  left: 0;
+  top: 0;
+}
+
+.project-num {
+  margin-top: 15px;
 }
 
 .filter {

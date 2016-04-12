@@ -48,8 +48,8 @@ var ProjectCategories = React.createClass({
       id++;
       return(
         <ul key={id} className="category-type">
-          <li onClick={this.handleClick}>{category}</li>
-          <li>{projects} projects</li>
+          <li onClick={this.handleClick} className="category">{category}</li>
+          <li className="project-num">{projects} projects</li>
         </ul>
       )
     }.bind(this));
