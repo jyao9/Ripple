@@ -2,14 +2,14 @@
 
 Ripple is a KickStarter clone that allows users to create projects and to donate to currently existing projects. It was built using Ruby on Rails and React.js.
 
-View the website at: [ripplestarter.herokuapp.com][heroku]
-[heroku]: http://ripplestarter.herokuapp.com
+View the website at: [http://www.ripplestarter.xyz/][website]
+[website]: http://www.ripplestarter.xyz/
 
 ## Home View:
-![Homepage](https://github.com/jyao9/Ripple/blob/master/app/assets/images/hompage.jpg)
+[![Homepage](https://github.com/jyao9/Ripple/blob/master/app/assets/images/hompage.jpg)](http://www.ripplestarter.xyz/)
 
 ## Project View:
-![Project](https://github.com/jyao9/Ripple/blob/master/app/assets/images/projects.jpg)
+[![Project](https://github.com/jyao9/Ripple/blob/master/app/assets/images/projects.jpg)](http://www.ripplestarter.xyz/)
 
 ## Technical Details:
 * When someone donates to a project on Ripple, that project will update based on the amount of money that person has donated. In order for the project to update properly, a separate backings table was needed to keep track of how many backings there were per reward and then sum up those backings to obtain the total amount donated to that project. Therefore, when a reward is selected by the current user, an ajax request is sent to the server to create a backing.
