@@ -622,6 +622,7 @@ img {
   margin: 0 auto;
   padding: 75px 200px;
   background: #fff;
+  border-bottom: 1px solid #ccc;
 }
 
 .reward-list-title {
@@ -922,8 +923,8 @@ img {
 .category-type {
   float: left;
   position: relative;
-  width: 100px;
-  padding: 50px 30px;
+  width: 162px;
+
   text-align: center;
   background: #fff;
   border: 1px solid #000;
@@ -950,6 +951,9 @@ img {
 
 .project-num {
   margin-top: 15px;
+  position: absolute;
+  left: 29%;
+  top: 45%;
 }
 
 .filter {

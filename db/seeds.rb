@@ -193,7 +193,7 @@ Project.create!(
 )
 
 project = Project.last
-file = File.open('app/assets/images/bambi.jpg')
+file = File.open('app/assets/images/bambi.png')
 project.image = file
 project.save!
 
@@ -332,59 +332,77 @@ Reward.create!(
 Reward.create!(
   project_id: 7,
   value: 1000,
-  description: "You will receive a piece of clothing of your choice from the clothing line."
+  description: "You will get to choose a song."
 )
 
 Reward.create!(
   project_id: 8,
   value: 1,
   description: "I just want to help out. No reward needed."
+)
+
+Reward.create!(
+  project_id: 8,
+  value: 100,
+  description: "You will receive a personalized thank you card."
 )
 
 Reward.create!(
   project_id: 8,
   value: 1000,
+  description: "You will receive a piece of clothing of your choice from the clothing line."
+)
+
+Reward.create!(
+  project_id: 9,
+  value: 1,
+  description: "I just want to help out. No reward needed."
+)
+
+Reward.create!(
+  project_id: 9,
+  value: 1000,
   description: "Your name will be put on as a recognized donator."
 )
 
 Reward.create!(
-  project_id: 8,
+  project_id: 9,
   value: 5000,
   description: "You will be able to demo the game early."
 )
 
 Reward.create!(
-  project_id: 9,
+  project_id: 10,
   value: 1,
   description: "I just want to help out. No reward needed."
 )
 
 Reward.create!(
-  project_id: 9,
+  project_id: 10,
   value: 100,
   description: "You will receive a personalized thank you letter."
 )
 
 Reward.create!(
-  project_id: 9,
+  project_id: 10,
   value: 500,
   description: "You will receive a scarf."
 )
 
 Reward.create!(
-  project_id: 10,
+  project_id: 11,
   value: 1,
   description: "I just want to help out. No reward needed."
 )
 
 Reward.create!(
-  project_id: 10,
+  project_id: 11,
   value: 100,
   description: "Your name will be put on as a recognized donator."
 )
 
 Reward.create!(
-  project_id: 10,
+  project_id: 11,
   value: 10000,
   description: "You will be able voice act for the remake."
 )
