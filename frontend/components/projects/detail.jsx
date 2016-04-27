@@ -31,6 +31,9 @@ var ProjectDetail = React.createClass({
   componentDidMount: function () {
     this.detailListener = ProjectStore.addListener(this._onChange);
     ApiUtil.fetchSingleProject(parseInt(this.props.params.projectId));
+    var tweets = this.tweets;
+
+    $('#twitter').append(tweets);
   },
 
   componentWillUnmount: function () {
@@ -109,7 +112,12 @@ var ProjectDetail = React.createClass({
 
             <div className="view-rewards"><Link to={rewardLink}>Back this project</Link></div>
             {projectOptions}
+          </div>
         </div>
+
+        <div id="twitter">
+          
+
         </div>
 
         {this.props.children}
