@@ -973,5 +973,9 @@ img {
 .twitter-feed {
   position: absolute;
   left: 35%;
-  bottom: -223%;
+  bottom: 125px;
+}
+
+.wrapper {
+  position: relative;
 }
