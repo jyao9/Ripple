@@ -962,10 +962,16 @@ img {
 }
 
 .main-page {
-  padding-bottom: 300px;
+  padding-bottom: 700px;
 }
 
 .category-header {
   font-size: 30px;
   margin-top: 25px;
+}
+
+.twitter-feed {
+  position: absolute;
+  left: 35%;
+  bottom: -223%;
 }
