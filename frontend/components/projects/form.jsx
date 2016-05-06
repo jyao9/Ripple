@@ -45,12 +45,34 @@ var ProjectForm = React.createClass ({
 
   },
 
-  createProject: function (project) {
-    ApiUtil.createProject(project, function (projectId) {
-      this.context.router.push({pathname: "projects/new/rewards", query: {}, state: {projectId: projectId}});
-    }.bind(this));
+  isFormComplete: function () {
+    if (this.state.title === "") {
+      return false;
+    } else if (this.state.category === null) {
+      return false;
+    } else if (this.state.blurb === "") {
+      return false;
+    } else if (this.state.duration === null) {
+      return false;
+    } else if (this.state.goal === null) {
+      return false;
+    } else if (this.state.imageFile === null) {
+      return false;
+    } else {
+      return true;
+    }
+  },
 
-    this.setState({ title: null, category: null, blurb: null, duration: null, goal: null, imageFile: null, imageUrl: null});
+  createProject: function (project) {
+    if (this.isFormComplete()) {
+      ApiUtil.createProject(project, function (projectId) {
+        this.context.router.push({pathname: "projects/new/rewards", query: {}, state: {projectId: projectId}});
+      }.bind(this));
+
+      this.setState({ title: null, category: null, blurb: null, duration: null, goal: null, imageFile: null, imageUrl: null});
+    } else {
+      alert("Must complete form to create a project!");
+    }
   },
 
   editProject: function (project, currentProject) {
