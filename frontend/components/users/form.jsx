@@ -17,12 +17,25 @@ var UserForm = React.createClass ({
   createUser: function (event) {
     event.preventDefault();
     var newUser = this.state;
-
+    var user = this.state.username;
+    var pass = this.state.password;
     ApiUtil.createUser(newUser, function () {
       this.context.router.push("/");
+      this.handleSessionChange;
+      this.login(user, pass);
     }.bind(this));
 
     this.setState({ username: null, password: null });
+  },
+
+  login: function (username, password) {
+    ApiUtil.login({ username: username, password: password }, this.handleSessionChange);
+  },
+
+  signInAsGuest: function (e) {
+    e.preventDefault();
+    ApiUtil.login({ username: "Guest", password: "Password" }, this.handleSessionChange);
+    this.context.router.push("/");
   },
 
   render: function () {
@@ -44,6 +57,7 @@ var UserForm = React.createClass ({
         </label>
 
         <button className="enter">Sign up</button>
+        <button onClick={this.signInAsGuest} className="guest-op">Sign in as Guest</button>
         <div className="account-change">Have an account?
           <Link to="login">Log in</Link>
         </div>

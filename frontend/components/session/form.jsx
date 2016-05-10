@@ -27,6 +27,12 @@ var SessionForm = React.createClass ({
     });
   },
 
+  signInAsGuest: function (e) {
+    e.preventDefault();
+    ApiUtil.login({ username: "Guest", password: "Password" }, this.handleSessionChange);
+    this.context.router.push("/");
+  },
+
   render: function () {
     return(
       <form className="new-user group" onSubmit={this.handleSubmit}>
@@ -46,7 +52,7 @@ var SessionForm = React.createClass ({
         </label>
 
         <button className="enter">Sign in</button>
-
+        <button onClick={this.signInAsGuest} className="guest-op">Sign in as Guest</button>
         <div className="account-change">New to Ripple?
           <Link to="users/new">Sign up!</Link>
         </div>

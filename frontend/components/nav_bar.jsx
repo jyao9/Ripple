@@ -45,6 +45,7 @@ var NavBar = React.createClass({
   handleClick: function () {
     ApiUtil.logout();
     this.setState({ currentUser: null })
+    this.context.router.push("/");
   },
 
   handleInputChange: function (e) {
