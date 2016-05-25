@@ -1,3 +1,4 @@
+
 User.create!(
   username: "Tommy",
   password: "password"
