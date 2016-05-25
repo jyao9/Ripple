@@ -27,11 +27,11 @@ var ProjectIndexItem = React.createClass({
     var projectStart = Date.parse(this.props.project.created_at);
     var daysPast = Math.floor((today - projectStart)/(24 * 60 * 60 * 1000));
     var daysLeft = this.props.project.duration - daysPast;
-    
+
     if (daysLeft < 0) {
       daysLeft = 0;
     }
-
+    
     return(
       <li className="project-index-item group" onClick={this.showDetail}>
         <img className="icon" className="icon-image" src={this.props.project.image_url} />

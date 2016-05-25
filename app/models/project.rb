@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   validates :title, :category, :blurb, :author_id, :duration, :goal, presence: true
-  has_attached_file :image, default_url: "missing.png"
+  has_attached_file :image, styles: {full: "650x450", thumb: "320x240"}, default_url: "missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   CATEGORIES = [

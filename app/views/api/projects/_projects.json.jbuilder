@@ -5,7 +5,6 @@ json.extract!(
 
 json.author_name project.author.username
 json.num_of_backers project.backers.count
-json.image_url asset_path(project.image.url(:original))
 
 json.status project.status
 
